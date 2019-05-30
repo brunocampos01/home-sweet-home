@@ -1,0 +1,21 @@
+{
+  "segments": [
+    "virtual_env",
+    "username",
+    "hostname",
+    "aws_profile",
+    "ssh",
+    "cwd",
+    "git",
+    "git_stash",
+    "jobs",
+    "set_term_title",
+    "svn",
+    "newline",
+    "root"
+  ],
+  "mode": "compatible",
+  "cwd": {
+    "max_depth": 10
+  }
+}

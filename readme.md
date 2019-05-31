@@ -1,37 +1,47 @@
 # Personal Configuration
 
-## Notebook
-
-
-
 ### Conky
+- .conkyrc: 
+- Install conky
 - Conky Variables: http://conky.sourceforge.net/variables.html
 
 
-- bashrcGitHub
-- Python
-- Java
-- /opt
-- Terminal
+### bashrc
+- .bashrc: 
 
+### Python
 
+### Java
 
-#### Linux System Optimizer & Monitoring
-https://oguzhaninan.github.io/Stacer-Web/<br/>
+### Terminal
 
-### terminator
-https://launchpad.net/terminator/+download
+#### Bash Configuration
+- [Oh my bash](https://ohmybash.github.io/)
 
-Pre requirements:
-`sudo apt-get install python-vte`
+#### Terminator
+- https://launchpad.net/terminator/+download
+
+##### Pre requirements:
+
+```bash
+sudo apt-get install python-vte
+```
 
 ```bash
 pip install psutil \
             glob \
             platform \
-            distutils \
+            distutils
 ```
 
+## Vim
+- https://github.com/amix/vimrc
+- https://realpython.com/vim-and-python-a-match-made-in-heaven/
+
+## `/opt`
+
+#### Linux System Optimizer & Monitoring
+https://oguzhaninan.github.io/Stacer-Web/<br/>
 
 ### Calculator
 https://speedcrunch.org/
@@ -44,15 +54,6 @@ http://gufw.org/
 
 ### Clean
 https://www.bleachbit.org/download/linux
-
-
-## Bug fix or sugestions
-## How to contribuite
-1. [Fork](fork) the official repository.
-2. Create a topic branch.
-3. *Implement your feature or bug fix.*
-4. Add, commit, and **push** your changes.
-5. Submit a pull request.
 
 ## Author
 - Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)

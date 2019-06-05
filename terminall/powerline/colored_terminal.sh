@@ -4,10 +4,9 @@
 # Script install poweline-shell
 # ----------------------------------- #
 
-echo -e "Pre-requeriments (PIP) \n"
+echo -e "Pre Requeriments (PIP) \n"
 sudo su
-apt install python-pip
-apt install git
+apt install python3-pip
 echo
 echo -e "======================================== \n"
 
@@ -46,18 +45,11 @@ echo
 echo
 echo -e "======================================== \n"
 
-
 echo -e "Create file with default config \n"
 mkdir -p ~/.config/powerline-shell && powerline-shell --generate-config > ~/.config/powerline-shell/config.json
 
 echo
 echo -e "======================================== \n"
-
-echo -e "install fonts-powerline \n"
-sudo apt install fonts-powerline
-echo
-echo -e "======================================== \n"
-
 
 echo -e " Visit: \n"
 echo

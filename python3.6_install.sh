@@ -1,4 +1,5 @@
 #!/bin/bash
+# ----------------------------------- #
 # Author: Bruno Campos
 # Script: ./python3.6.sh
 # ----------------------------------- #
@@ -7,27 +8,47 @@
 # Output: python3.6
 # ----------------------------------- #
 
+echo -e "Update packages \n"
+sudo apt-get update && apt-get upgrade
 echo
 echo -e "======================================== \n"
-sudo apt-get install build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 
+echo -e "Install dependences\n"
+sudo apt-get install tk-dev \
+                     libc6-dev \
+                     libbz2-dev \
+                     libssl-dev \
+                     libgdbm-dev \
+                     checkinstall \
+                     libsqlite3-dev \
+                     build-essential \
+                     libncursesw5-dev \
+                     libreadline-gplv2-dev
 echo
 echo -e "======================================== \n"
-echo "Indo para /usr/src"
+
+echo -e "Open /usr/src"
 cd /usr/src
 pwd
-
 echo
 echo -e "======================================== \n"
+
+echo -e "Download Binary Python"
 sudo wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
 sudo tar xzf Python-3.6.0.tgz
 cd Python-3.6.0
 pwd
-sudo ./configure
-sudo make altinstall
-
 echo
 echo -e "======================================== \n"
-sudo python3.6 -V
+
+echo -e "Configure and make install "
+sudo ./configure
+sudo make altinstall
+echo
+echo -e "======================================== \n"
+
+echo -e "Check Version "
+sudo python3 --version
+sudo which python
 echo
 echo -e "======================================== \n"

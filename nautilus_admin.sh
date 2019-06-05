@@ -17,11 +17,7 @@ sudo apt-get update && apt-get upgrade
 echo
 echo -e "======================================== \n"
 
-
 echo -e "you must restart Nautilus ! \n"
 nautilus -q | sleep 5
 echo
 echo -e "======================================== \n"
-
-
-

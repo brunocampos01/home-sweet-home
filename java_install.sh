@@ -17,19 +17,16 @@ sudo apt-get update && apt-get upgrade
 echo
 echo -e "======================================== \n"
 
-
 echo -e "Install Java \n"
 sudo apt-get install software-properties-common
 sudo apt-get install oracle-java11-installer | sleep 3
 echo
 echo -e "======================================== \n"
 
-
 echo -e "Version language Java \n"
 java -version | sleep 3
 echo
 echo -e "======================================== \n"
-
 
 echo -e "Version compiler Java \n"
 javac -version | sleep 3

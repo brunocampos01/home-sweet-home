@@ -19,7 +19,6 @@
 - [Oh my bash](https://ohmybash.github.io/)
 
 #### Terminator
-- https://launchpad.net/terminator/+download
 
 ##### Pre requirements:
 
@@ -32,6 +31,24 @@ pip install psutil \
             glob \
             platform \
             distutils
+```
+
+- Add Terminator Repository:
+
+```bash
+sudo add-apt-repository ppa:gnome-terminator
+```
+
+- Update sources.list
+
+```bash
+sudo apt-get update
+```
+
+Install Terminator
+
+```bash
+sudo apt-get install terminator
 ```
 
 ## Vim

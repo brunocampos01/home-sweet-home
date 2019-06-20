@@ -1,6 +1,6 @@
 # Personal Configuration
 
-### Conky
+## Conky
 - .conkyrc: 
 - Install conky
 - Conky Variables: http://conky.sourceforge.net/variables.html
@@ -9,18 +9,23 @@
 ### bashrc
 - .bashrc: 
 
-### Python
 
-### Java
-
-### Terminal
+## Terminal
 
 #### Bash Configuration
 - [Oh my bash](https://ohmybash.github.io/)
 
 #### Terminator
 
-##### Pre requirements:
+- https://terminator-gtk3.readthedocs.io/en/latest/index.html
+
+
+- :)
+```
+time for i in {1..100} ; do gnome-terminal --profile=Quickexit; done
+```
+
+##### Pre requirements
 
 ```bash
 sudo apt-get install python-vte
@@ -54,6 +59,14 @@ sudo apt-get install terminator
 ## Vim
 - https://github.com/amix/vimrc
 - https://realpython.com/vim-and-python-a-match-made-in-heaven/
+
+
+### Python
+...
+
+### Java
+...
+
 
 ## `/opt`
 

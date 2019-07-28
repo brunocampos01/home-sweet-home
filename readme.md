@@ -69,6 +69,8 @@ sudo apt-get install terminator
 
 
 ## `/opt`
+https://snapcraft.io
+
 
 #### Linux System Optimizer & Monitoring
 https://oguzhaninan.github.io/Stacer-Web/<br/>

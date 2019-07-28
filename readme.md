@@ -85,6 +85,13 @@ http://gufw.org/
 ### Clean
 https://www.bleachbit.org/download/linux
 
+### Shell Formater
+
+```shell script
+snap install shfmt # https://snapcraft.io/shfmt
+```
+---
+
 ## Author
 - Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)
 

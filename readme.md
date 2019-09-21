@@ -28,7 +28,12 @@ time for i in {1..100} ; do gnome-terminal --profile=Quickexit; done
 ##### Requirements
 
 ```bash
-sudo apt-get install python-vte
+sudo apt install build-essential \
+                 libssl-dev \
+                 libffi-dev \
+                 python3-dev\
+                 python3-venv \
+                 python-vte
 ```
 
 ```bash

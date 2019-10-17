@@ -37,16 +37,13 @@ sudo apt install build-essential \
 ```
 
 ```bash
-pip install psutil \
-            glob \
-            platform \
-            distutils
+sudo apt install python3-pip
 ```
 
 - Add Terminator Repository:
 
 ```bash
-sudo add-apt-repository ppa:gnome-terminator
+sudo apt install terminator
 ```
 
 - Update sources.list

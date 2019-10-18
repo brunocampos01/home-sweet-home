@@ -42,10 +42,10 @@ export OSH=/home/campos/.oh-my-bash
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 # OSH_THEME="powerline"
-OSH_THEME="powerline-multiline"
+# OSH_THEME="powerline-multiline"
 # OSH_THEME="powerline-naked"
 # OSH_THEME="powerline-plain"
-# OSH_THEME="zork"
+OSH_THEME="zork"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"

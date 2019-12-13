@@ -212,5 +212,6 @@ alias ip='colored_ip'
 # export JAVA_HOME=
 
 # Python
+alias python=python3
 # export PYTHONHOME=
 # export PYTHONPATH=

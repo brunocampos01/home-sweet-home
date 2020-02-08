@@ -215,3 +215,4 @@ alias ip='colored_ip'
 alias python=python3
 # export PYTHONHOME=
 # export PYTHONPATH=
+alias file=nemo

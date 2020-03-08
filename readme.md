@@ -94,6 +94,15 @@ https://www.bleachbit.org/download/linux
 ```shell script
 snap install shfmt # https://snapcraft.io/shfmt
 ```
+
+### Orthers
+```
+sudo apt install unixodbc-dev\
+                 tree\
+                 git\
+                 gitk\
+                 htop
+
 ---
 
 ## Author

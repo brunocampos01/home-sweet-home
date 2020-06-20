@@ -95,6 +95,9 @@ https://www.bleachbit.org/download/linux
 snap install shfmt # https://snapcraft.io/shfmt
 ```
 
+### Mouse and Keyboard
+- https://pwr-solaar.github.io/Solaar/
+
 ### Orthers
 ```
 sudo apt install unixodbc-dev\

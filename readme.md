@@ -95,6 +95,15 @@ https://www.bleachbit.org/download/linux
 snap install shfmt # https://snapcraft.io/shfmt
 ```
 
+### Ccat
+
+```shell script
+wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
+tar xfz linux-amd64-1.1.0.tar.gz 
+sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
+sudo chmod +x /usr/local/bin/ccat
+```
+
 ### Orthers
 ```
 sudo apt install unixodbc-dev\

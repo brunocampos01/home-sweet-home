@@ -110,7 +110,9 @@ sudo apt install unixodbc-dev\
                  tree\
                  git\
                  gitk\
-                 htop
+                 htop\
+                 ncdu\
+                 jq\
 
 ---
 

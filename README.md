@@ -32,12 +32,13 @@ mv config/.vscode/*                     ~/$HOME/
 - [Boot pendrive](https://www.balena.io/etcher/)
 
 ### My `rc`
-- [.bashrc](.bashrc)
-- [.vimrc](.vimrc)
-- [.conkyrc](.conkyrc)
-- [.matplotlib](.matplotlib)
-- [.jupyter/](jupyter_notebook_config)
-
+- [.bashrc](config/.bashrc)
+- [.vimrc](config/.vimrc)
+- [.conkyrc](config/.conkyrc)
+- [.matplotlib](config/.matplotlib)
+- [.jupyter](config/jupyter_notebook_config)
+- [terminator](config/)
+- [.vscode](config/)
 ---
 
 #### Author

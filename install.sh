@@ -39,11 +39,11 @@ sudo apt install build-essential \
                  python3-venv \
                  python3-pip -y
 
-python -m pip install -U pip \
-						 setuptools \
-						 wheel \
-						 virtualenv \
-						 pipenv
+python -m pip install -U pip\
+						 setuptools\
+						 wheel\
+						 virtualenv\
+						 pipenv\
                          flake8
 						
 echo
@@ -131,23 +131,22 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 
 echo -e "======================================== \n"
 echo -e "Snapd"
-sudo snap install snap-store
 sudo snap install hello-world
-sudo snap install pycharm-community --classic
-sudo snap install intellij-idea-community --classic
-sudo snap install code --classic
-sudo snap install postman
-sudo snap install dbeaver-ce
-sudo snap install evince
-sudo snap install remmina
-
-sudo snap install vlc
-sudo snap install ffmpeg
-sudo snap install spotify
-sudo snap install youtube-dl
-sudo snap install shutter
-sudo snap install nmap
-sudo snap install qalculate
+snap-store
+pycharm-community --classic
+intellij-idea-community --classic
+code --classic
+postman
+dbeaver-ce
+evince
+remmina
+vlc
+ffmpeg
+spotify
+youtube-dl
+shutter
+nmap
+qalculate
 echo
 echo -e "======================================== \n"
 echo -e "VSCode extesions"

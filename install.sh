@@ -1,5 +1,4 @@
 #!/bin/bash
-# Author: Bruno Campos
 # ----------------------------------- #
 mkdir tmp/
 cd tmp/
@@ -86,8 +85,6 @@ sh test-docker.sh
 
 sh install.sh
 make check
-cd ..
-
 echo
 echo -e "======================================== \n"
 echo -e "Install the Default JRE/JDK and maven"
@@ -162,4 +159,5 @@ code --install-extension ms-python.python
 code --list-extensions
 echo -e "======================================== \n"
 
+cd ..
 sudo rm -r tmp/

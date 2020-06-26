@@ -1,18 +1,37 @@
 # Personal Configuration
 
-## Install 
+### Install 
 ```bash
 chmod +x install.sh
+./install.sh
 ```
 
-### Some Applications that are installed with `install.sh`
+### Configure
+```bash
+mv config/terminal/terminator/config    ~/$HOME/.config/terminator/
+mv config/terminal/zork/zork.theme.sh   ~/$HOME/.oh-my-bash/themes/zork/
+
+mv config/jupyter_notebook_config.py    ~/$HOME/.jupyter/
+mv config/plot.ini                      ~/$HOME/.config/matplotlib/
+
+mv config/.bashrc                       ~/$HOME/
+mv config/.bash_eternal_history         ~/$HOME/
+mv config/.vimrc                        ~/$HOME/
+mv config/.gitconfig                    ~/$HOME/
+mv config/.vscode/*                     ~/$HOME/
+
+```
+
+
+
+#### Some Applications that are installed with `install.sh`
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)
 - [Oh my bash](https://ohmybash.github.io/)
 - [snapd](https://snapcraft.io)
 - [Linux System Optimizer & Monitoring](https://oguzhaninan.github.io/Stacer-Web/)
 - [Boot pendrive](https://www.balena.io/etcher/)
 
-## `rc`
+### My `rc`
 - [.bashrc](.bashrc)
 - [.vimrc](.vimrc)
 - [.conkyrc](.conkyrc)

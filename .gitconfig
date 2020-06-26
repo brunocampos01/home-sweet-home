@@ -1,0 +1,30 @@
+[user]
+	name = brunocampos01
+	email = brunocampos01@gmail.com
+	username = brunocampos01
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+[color]
+	ui = true
+[web]
+	browser = google-chrome
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

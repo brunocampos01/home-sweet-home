@@ -7,7 +7,13 @@
 
 
 ### bashrc
-- .bashrc:
+- [.bashrc]()
+
+
+
+
+chmod +x install.sh
+
 
 
 ## Terminal
@@ -20,59 +26,14 @@
 - https://terminator-gtk3.readthedocs.io/en/latest/index.html
 
 
-- :)
-```
-time for i in {1..100} ; do gnome-terminal --profile=Quickexit; done
-```
-
-##### Requirements
-
-```bash
-sudo apt install build-essential \
-                 libssl-dev \
-                 libffi-dev \
-                 python3-dev\
-                 python3-venv \
-                 python-vte
-```
-
-```bash
-sudo apt install python3-pip
-```
-
-- Add Terminator Repository:
-
-```bash
-sudo apt install terminator
-```
-
-- Update sources.list
-
-```bash
-sudo apt-get update
-```
-
-Install Terminator
-
-```bash
-sudo apt-get install terminator
-```
 
 ## Vim
 - https://github.com/amix/vimrc
 - https://realpython.com/vim-and-python-a-match-made-in-heaven/
 
 
-### Python
-...
-
-### Java
-...
-
-
 ## `/opt`
 https://snapcraft.io
-
 
 #### Linux System Optimizer & Monitoring
 https://oguzhaninan.github.io/Stacer-Web/<br/>
@@ -83,41 +44,18 @@ https://speedcrunch.org/
 ### Boot pendrive
 https://www.balena.io/etcher/
 
-### Firewall
-http://gufw.org/
-
 ### Clean
 https://www.bleachbit.org/download/linux
 
-### Shell Formater
+---
 
-```shell script
-snap install shfmt # https://snapcraft.io/shfmt
-```
-
-### Ccat
-
-```shell script
-wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
-tar xfz linux-amd64-1.1.0.tar.gz 
-sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
-sudo chmod +x /usr/local/bin/ccat
-```
-
-### Orthers
-```
-sudo apt install unixodbc-dev\
-                 tree\
-                 git\
-                 gitk\
-                 htop\
-                 ncdu\
-                 jq\
+#### Author
+<a href="mailto:brunocampos01@gmail.com" target="_blank"><img class="" src="https://github.com/brunocampos01/devops/blob/master/images/gmail.png" width="28"></a>
+<a href="https://github.com/brunocampos01" target="_blank"><img class="ai-subscribed-social-icon" src="https://github.com/brunocampos01/devops/blob/master/images/github.png" width="30"></a>
+<a href="https://www.linkedin.com/in/brunocampos01/" target="_blank"><img class="ai-subscribed-social-icon" src="https://github.com/brunocampos01/devops/blob/master/images/linkedin.png" width="30"></a>
+Bruno Aurélio Rôzza de Moura Campos 
 
 ---
 
-## Author
-- Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)
-
-## Copyright
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Bruno A. R. M. Campos</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+#### Copyright
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br/>

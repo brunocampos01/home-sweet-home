@@ -8,7 +8,6 @@ echo -e "Update packages \n"
 sudo apt-get update && apt-get upgrade
 echo
 echo -e "======================================== \n"
-
 echo -e "Install dependences\n"
 sudo apt install -y unixodbc-dev\
                  vim \
@@ -28,24 +27,23 @@ sudo apt install -y unixodbc-dev\
                  bleachbit
 
 # python
-sudo apt install build-essential \
-                 libssl-dev \
-                 libffi-dev \
-                 zlib1g-dev \
-                 libgdbm-dev \
-                 libreadline-dev \
-                 python3 \
-                 python3-dev \
-                 python3-venv \
-                 python3-pip -y
+sudo apt install build-essential\
+                 libssl-dev\
+                 libffi-dev\
+                 zlib1g-dev\
+                 libgdbm-dev\
+                 libreadline-dev\
+                 python3\
+                 python3-dev\
+                 python3-venv\
+                 python3-pip
 
 python -m pip install -U pip\
 						 setuptools\
 						 wheel\
 						 virtualenv\
 						 pipenv\
-                         flake8
-						
+                         flake8        
 echo
 echo -e "======================================== \n"
 echo -e "Check Python Version "
@@ -75,6 +73,7 @@ wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0
 tar xfz linux-amd64-1.1.0.tar.gz 
 sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
 sudo chmod +x /usr/local/bin/ccat
+echo
 echo -e "======================================== \n"
 echo -e "Install Docker "
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -122,31 +121,30 @@ source /etc/profile.d/maven.sh
 echo $JAVA_HOME
 echo $MAVEN_HOME
 echo $PATH
-
 echo
 echo -e "======================================== \n"
 echo -e "Intall Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
-
+echo
 echo -e "======================================== \n"
 echo -e "Snapd"
-sudo snap install hello-world
-snap-store
-pycharm-community --classic
-intellij-idea-community --classic
-code --classic
-postman
-dbeaver-ce
-evince
-remmina
-vlc
-ffmpeg
-spotify
-youtube-dl
-shutter
-nmap
-qalculate
+sudo snap install hello-world\
+                  snap-store\
+                  pycharm-community --classic\
+                  intellij-idea-community --classic\
+                  code --classic\
+                  postman\
+                  dbeaver-ce\
+                  evince\
+                  remmina\
+                  vlc\
+                  ffmpeg\
+                  spotify\
+                  youtube-dl\
+                  shutter\
+                  nmap\
+                  qalculate
 echo
 echo -e "======================================== \n"
 echo -e "VSCode extesions"
@@ -156,6 +154,7 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension vscjava.vscode-java-pac
 code --install-extension ms-python.python
 code --list-extensions
+echo
 echo -e "======================================== \n"
 
 cd ..

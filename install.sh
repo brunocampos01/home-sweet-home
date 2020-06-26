@@ -19,13 +19,14 @@ sudo apt install -y unixodbc-dev\
                  htop\
                  ncdu\
                  jq\
-                 snapd \
-                 apt-transport-https \
-                 ca-certificates \
-                 curl \
-                 wget \
-                 software-properties-common \
-                 ufw
+                 snapd\
+                 apt-transport-https\
+                 ca-certificates\
+                 curl\
+                 wget\
+                 software-properties-common\
+                 ufw\
+                 bleachbit
 
 # python
 sudo apt install build-essential \
@@ -64,6 +65,10 @@ echo
 echo -e "======================================== \n"
 echo -e "Install Terminator "
 sudo apt install terminator
+echo
+echo -e "======================================== \n"
+echo -e "Install Oh My BASH! "
+sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 echo
 echo -e "======================================== \n"
 echo -e "Install Ccat (collored cat)"

@@ -1,51 +1,23 @@
 # Personal Configuration
 
-## Conky
-- .conkyrc:
-- Install conky
-- Conky Variables: http://conky.sourceforge.net/variables.html
-
-
-### bashrc
-- [.bashrc]()
-
-
-
-
+## Install 
+```bash
 chmod +x install.sh
+```
 
-
-
-## Terminal
-
-#### Bash Configuration
+### Some Applications that are installed with `install.sh`
+- [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)
 - [Oh my bash](https://ohmybash.github.io/)
+- [snapd](https://snapcraft.io)
+- [Linux System Optimizer & Monitoring](https://oguzhaninan.github.io/Stacer-Web/)
+- [Boot pendrive](https://www.balena.io/etcher/)
 
-#### Terminator
-
-- https://terminator-gtk3.readthedocs.io/en/latest/index.html
-
-
-
-## Vim
-- https://github.com/amix/vimrc
-- https://realpython.com/vim-and-python-a-match-made-in-heaven/
-
-
-## `/opt`
-https://snapcraft.io
-
-#### Linux System Optimizer & Monitoring
-https://oguzhaninan.github.io/Stacer-Web/<br/>
-
-### Calculator
-https://speedcrunch.org/
-
-### Boot pendrive
-https://www.balena.io/etcher/
-
-### Clean
-https://www.bleachbit.org/download/linux
+## `rc`
+- [.bashrc](.bashrc)
+- [.vimrc](.vimrc)
+- [.conkyrc](.conkyrc)
+- [.matplotlib](.matplotlib)
+- [.jupyter/](jupyter_notebook_config)
 
 ---
 

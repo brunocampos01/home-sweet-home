@@ -31,7 +31,7 @@ mv config/.vscode/*                     ~/$HOME/
 - [Linux System Optimizer & Monitoring](https://oguzhaninan.github.io/Stacer-Web/)
 - [Boot pendrive](https://www.balena.io/etcher/)
 
-### My `rc`
+#### My `rc`
 - [.bashrc](config/.bashrc)
 - [.vimrc](config/.vimrc)
 - [.conkyrc](config/.conkyrc)

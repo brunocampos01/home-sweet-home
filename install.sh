@@ -153,6 +153,7 @@ code --install-extension PKief.material-icon-theme
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension vscjava.vscode-java-pac
 code --install-extension ms-python.python
+code --install-extension SonarSource.sonarlint-vscode # java lint
 code --list-extensions
 echo
 echo -e "======================================== \n"

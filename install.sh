@@ -24,6 +24,7 @@ sudo apt install -y unixodbc-dev\
                  wget\
                  software-properties-common\
                  ufw\
+                 speedtest-cli\
                  bleachbit
 
 # python

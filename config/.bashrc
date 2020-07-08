@@ -9,7 +9,7 @@ alias ll='ls -lt'
 alias la='ls -A'
 alias l='ls -CF'
 alias cat='/usr/local/bin/ccat'
-alias du ='ncdu'
+alias du='ncdu'
 
 # set prompt %s λ or └─▪ or →
 #PS1="[\d \t] \u@\h\n\w\$ "

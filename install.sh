@@ -107,6 +107,10 @@ echo -e "======================================== \n"
 echo -e "Set Docker:"
 sudo usermod -aG docker ${USER}
 id -nG
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
+docker run hello-world
 sleep 2
 echo
 echo -e "======================================== \n"

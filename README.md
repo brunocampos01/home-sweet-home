@@ -8,17 +8,17 @@ chmod +x install.sh
 
 ### Configure
 ```bash
-mv config/terminal/terminator/config    ~/$HOME/.config/terminator/
-mv config/terminal/zork/zork.theme.sh   ~/$HOME/.oh-my-bash/themes/zork/
+cp config/terminal/terminator/config    $HOME/.config/terminator/
+cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
 
-mv config/jupyter_notebook_config.py    ~/$HOME/.jupyter/
-mv config/plot.ini                      ~/$HOME/.config/matplotlib/
+cp config/jupyter_notebook_config.py    $HOME/.jupyter/
+cp config/plot.ini                      $HOME/.config/matplotlib/
 
-mv config/.bashrc                       ~/$HOME/
-mv config/.bash_eternal_history         ~/$HOME/
-mv config/.vimrc                        ~/$HOME/
-mv config/.gitconfig                    ~/$HOME/
-mv config/.vscode/*                     ~/$HOME/
+cp config/.bashrc                       $HOME/
+cp config/.bash_eternal_history         $HOME/
+cp config/.vimrc                        $HOME/
+cp config/.gitconfig                    $HOME/
+cp config/.vscode/*                     $HOME/
 
 ```
 

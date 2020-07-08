@@ -19,6 +19,8 @@ sudo apt install -y unixodbc-dev\
                  ncdu\
                  jq\
                  snapd\
+                 libcurl4\
+                 libcurl4-openssl-dev\
                  apt-transport-https\
                  ca-certificates\
                  curl\

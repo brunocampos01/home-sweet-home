@@ -61,6 +61,14 @@ echo -e "Snap Test:"
 sudo snap install hello-world
 echo
 echo -e "======================================== \n"
+echo -e "Generate ssh keys:"
+cd ~/.ssh
+ssh-keygen -t rsa -N "" -f id_rsa
+cat id_rsa.pub
+cd ~/tmp/
+echo
+sleep 2
+echo -e "======================================== \n"
 echo -e "UFW Status:"
 sudo ufw enable
 sudo ufw status verbose
@@ -96,7 +104,6 @@ echo
 echo -e "======================================== \n"
 echo -e "Set Docker:"
 sudo usermod -aG docker ${USER}
-su - ${USER}
 id -nG
 sleep 2
 echo
@@ -166,6 +173,7 @@ sleep 2
 echo
 echo -e "======================================== \n"
 echo -e "VSCode extesions"
+code --version
 code --install-extension ms-python.python
 code --install-extension PKief.material-icon-theme
 code --install-extension garytyler.darcula-pycharm

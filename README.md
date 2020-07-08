@@ -8,6 +8,11 @@ chmod +x install.sh
 
 ### Configure
 ```bash
+mkdir projects/
+cd projects/
+git clone git@github.com:brunocampos01/home-sweet-home.git
+cd home-sweet-home/
+
 mkdir $HOME/.config/terminator/
 cp config/terminal/terminator/config    $HOME/.config/terminator/
 cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/

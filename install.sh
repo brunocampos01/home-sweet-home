@@ -85,6 +85,12 @@ sh test-docker.sh
 
 sh install.sh
 make check
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+docker-compose --version
 echo
 echo -e "======================================== \n"
 echo -e "Install the Default JRE/JDK and maven"
@@ -151,7 +157,9 @@ echo -e "======================================== \n"
 echo -e "VSCode extesions"
 code --install-extension ms-python.python
 code --install-extension PKief.material-icon-theme
+code --install-extension garytyler.darcula-pycharm
 code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vscode-remote.remote-containers
 code --install-extension vscjava.vscode-java-pac
 code --install-extension ms-python.python
 code --install-extension SonarSource.sonarlint-vscode # java lint

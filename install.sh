@@ -23,6 +23,7 @@ sudo apt install -y unixodbc-dev\
                  ca-certificates\
                  curl\
                  wget\
+                 pstree\
                  p7zip-full\
                  software-properties-common\
                  ufw\

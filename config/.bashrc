@@ -10,6 +10,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cat='/usr/local/bin/ccat'
 alias du='ncdu'
+alias file="xdg-open"
+# alias file=nemo
+alias python=python3
 
 # set prompt %s λ or └─▪ or →
 #PS1="[\d \t] \u@\h\n\w\$ "
@@ -217,7 +220,5 @@ alias ip='colored_ip'
 # export JAVA_HOME=
 
 # Python
-alias python=python3
 # export PYTHONHOME=
 # export PYTHONPATH=
-alias file=nemo

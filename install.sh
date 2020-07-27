@@ -15,6 +15,7 @@ sudo apt install -y unixodbc-dev\
                  tree\
                  git\
                  gitk\
+                 curl \
                  htop\
                  ncdu\
                  jq\

@@ -30,6 +30,7 @@ sudo apt install -y unixodbc-dev\
                  speedtest-cli\
                  bleachbit
 
+
 # python
 sudo apt install -y build-essential\
                  libssl-dev\
@@ -40,7 +41,9 @@ sudo apt install -y build-essential\
                  python3\
                  python3-dev\
                  python3-venv\
-                 python3-pip
+                 python3-pip \
+                 python3-widgetsnbextension \
+                 python3-testresources
 
 python3 -m pip install -U pip\
 						 setuptools\

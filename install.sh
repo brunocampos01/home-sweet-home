@@ -42,7 +42,7 @@ sudo apt install -y build-essential\
                  python3-venv\
                  python3-pip
 
-python -m pip install -U pip\
+python3 -m pip install -U pip\
 						 setuptools\
 						 wheel\
 						 virtualenv\

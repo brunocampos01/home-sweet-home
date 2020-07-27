@@ -129,7 +129,7 @@ mvn -version
 echo
 echo -e "======================================== \n"
 echo -e "Setup environment variables of Java and maven"
-sudo export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" > /etc/environment
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" > /etc/environment
 source /etc/environment
 echo $JAVA_HOME
 

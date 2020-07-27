@@ -1,11 +1,5 @@
 # Personal Configuration
 
-### Install 
-```bash
-chmod +x install.sh
-./install.sh
-```
-
 ### Configure
 ```bash
 mkdir projects/
@@ -30,7 +24,11 @@ mkdir  .vscode
 cp config/.vscode/*                     $HOME/
 ```
 
-
+### Install 
+```bash
+chmod +x install.sh
+./install.sh
+```
 
 #### Some Applications that are installed with `install.sh`
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)

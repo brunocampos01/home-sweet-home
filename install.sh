@@ -104,16 +104,16 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 sleep 2
 echo
-echo -e "======================================== \n"
-echo -e "Set Docker:"
-sudo usermod -aG docker ${USER}
-id -nG
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker 
-docker run hello-world
-sleep 2
-echo
+#echo -e "======================================== \n"
+#echo -e "Set Docker:"
+#sudo usermod -aG docker ${USER}
+#id -nG
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
+#newgrp docker 
+#docker run hello-world
+#sleep 2
+#echo
 echo -e "======================================== \n"
 echo -e "Install the Default JRE/JDK and maven"
 sudo apt install -y openjdk-8-jre\

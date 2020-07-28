@@ -106,16 +106,10 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 sleep 2
 echo
-#echo -e "======================================== \n"
-#echo -e "Set Docker:"
-#sudo usermod -aG docker ${USER}
-#id -nG
-#sudo groupadd docker
-#sudo usermod -aG docker $USER
-#newgrp docker 
-#docker run hello-world
-#sleep 2
-#echo
+echo -e "======================================== \n"
+echo -e "Set Docker:"
+echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
+sleep 60
 echo -e "======================================== \n"
 echo -e "Install the Default JRE/JDK and maven"
 sudo apt install -y openjdk-8-jre\
@@ -131,21 +125,22 @@ mvn -version
 echo
 echo -e "======================================== \n"
 echo -e "Setup environment variables of Java and maven"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" > /etc/environment
-source /etc/environment
-echo $JAVA_HOME
-
-sudo chmod +x /etc/profile.d/maven.sh
-
-sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh
-sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh
-sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh
-sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh
-sudo source /etc/profile.d/maven.sh
-echo $JAVA_HOME
-echo $MAVEN_HOME
-echo $PATH
-sleep 2
+echo -e "Open New Terminal and set environment variables. SLEEP 60"
+echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
+echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
+echo "source /etc/environment"
+echo "echo $JAVA_HOME"
+sleep 60
+echo
+echo -e "Open New Terminal and set maven variables. SLEEP 60"
+echo "sudo chmod +x /etc/profile.d/maven.sh"
+echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
+echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
+echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
+echo "sudo source /etc/profile.d/maven.sh"
+echo "echo $MAVEN_HOME"
+echo "echo $PATH"
+sleep 60
 echo
 echo -e "======================================== \n"
 echo -e "Install Vim Extesions"
@@ -197,6 +192,8 @@ echo
 echo -e "======================================== \n"
 cd ..
 sudo rm -r tmp/
+sudo apt autoclean
+sudo apt autoremove
 echo -e "======================================== \n"
 echo -e "Install Oh My BASH! "
 sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"

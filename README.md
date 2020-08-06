@@ -26,8 +26,8 @@ cp config/.vscode/*                     $HOME/
 
 ### Install 
 ```bash
-chmod +x install.sh
-./install.sh
+chmod +x inital_install.sh
+./inital_install.sh
 ```
 
 #### Some Applications that are installed with `install.sh`

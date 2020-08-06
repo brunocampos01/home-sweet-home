@@ -1,9 +1,5 @@
 [global_config]
-  focus = mouse
-  hide_from_taskbar = True
   title_inactive_bg_color = "#ffffff"
-  suppress_multiple_term_dialog = True
-  title_use_system_font = False
 [keybindings]
   next_tab = <Alt>apostrophe
   switch_to_tab_1 = <Alt>1

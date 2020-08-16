@@ -217,7 +217,7 @@ alias ip='colored_ip'
 # Paths
 #---------------------------------------------------------------
 # Java
-# export JAVA_HOME=
+# export JAVA_HOME=/usr/lib/jvm/default-java
 
 # Python
 # export PYTHONHOME=

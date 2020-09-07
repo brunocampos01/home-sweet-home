@@ -216,6 +216,7 @@ alias ip='colored_ip'
 #---------------------------------------------------------------
 # Paths
 #---------------------------------------------------------------
+export EDITOR=/usr/bin/vim
 # Java
 # export JAVA_HOME=/usr/lib/jvm/default-java
 

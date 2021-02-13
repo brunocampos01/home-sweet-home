@@ -112,9 +112,16 @@ echo -e "Open New Terminal and execute Docker postinstallation: https://docs.doc
 sleep 60
 echo -e "======================================== \n"
 echo -e "Install the Default JRE/JDK and maven"
-sudo apt install -y openjdk-8-jre\
-                    openjdk-8-jdk\
-                    maven
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+
+sdk install maven
+sdk install sbt
+sdk install scala
+sdk install spark
+sdk install java 8.0.282-open
+
 sleep 2
 echo
 echo -e "======================================== \n"

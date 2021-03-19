@@ -181,6 +181,8 @@ sudo snap install shutter
 sudo snap install nmap
 sudo snap install qalculate
 sudo snap install bitwarden
+sudo snap install youtube-dl
+sudo snap install gydl
 sleep 2
 echo
 echo -e "======================================== \n"

@@ -180,6 +180,7 @@ sudo snap install spotify
 sudo snap install shutter
 sudo snap install nmap
 sudo snap install qalculate
+sudo snap install bitwarden
 sleep 2
 echo
 echo -e "======================================== \n"

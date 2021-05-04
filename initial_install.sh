@@ -183,6 +183,7 @@ sudo snap install qalculate
 sudo snap install bitwarden
 sudo snap install youtube-dl
 sudo snap install gydl
+sudo snap install telegram-desktop
 sleep 2
 echo
 echo -e "======================================== \n"

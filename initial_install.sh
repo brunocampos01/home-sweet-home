@@ -18,6 +18,7 @@ sudo apt install -y unixodbc-dev\
                  curl \
                  htop\
                  ncdu\
+                 lame\
                  jq\
                  snapd\
                  apt-transport-https\

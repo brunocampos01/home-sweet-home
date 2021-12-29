@@ -187,6 +187,7 @@ sudo snap install youtube-dl
 sudo snap install gydl
 sudo snap install telegram-desktop
 sudo snap install flameshot
+sudo snap install simplescreenrecorder
 echo
 echo -e "======================================== \n"
 echo -e "flameshot as default: https://flameshot.org/guide/key-bindings/"

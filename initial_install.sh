@@ -133,25 +133,25 @@ javac -version
 mvn -version
 echo
 echo -e "======================================== \n"
-echo -e "Setup environment variables of Java and maven"
-echo -e "Open New Terminal and set environment variables. SLEEP 60"
-echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
-echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
-echo "source /etc/environment"
-echo "echo $JAVA_HOME"
-sleep 60
-echo
-echo -e "Open New Terminal and set maven variables. SLEEP 60"
-echo "sudo chmod +x /etc/profile.d/maven.sh"
-echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
-echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
-echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
-echo "sudo source /etc/profile.d/maven.sh"
-echo "echo $MAVEN_HOME"
-echo "echo $PATH"
-sleep 60
-echo
-echo -e "======================================== \n"
+# echo -e "Setup environment variables of Java and maven"
+# echo -e "Open New Terminal and set environment variables. SLEEP 60"
+# echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
+# echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
+# echo "source /etc/environment"
+# echo "echo $JAVA_HOME"
+# sleep 60
+# echo
+# echo -e "Open New Terminal and set maven variables. SLEEP 60"
+# echo "sudo chmod +x /etc/profile.d/maven.sh"
+# echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
+# echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
+# echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
+# echo "sudo source /etc/profile.d/maven.sh"
+# echo "echo $MAVEN_HOME"
+# echo "echo $PATH"
+# sleep 60
+# echo
+# echo -e "======================================== \n"
 echo -e "Install Vim Extesions"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 touch ~/.vimrc

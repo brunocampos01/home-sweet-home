@@ -13,6 +13,7 @@ alias du='ncdu'
 alias file="xdg-open"
 # alias file=nemo
 alias python=python3
+alias pip=pip3
 
 # set prompt %s λ or └─▪ or →
 #PS1="[\d \t] \u@\h\n\w\$ "

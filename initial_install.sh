@@ -5,7 +5,7 @@ cd tmp/
 
 
 echo -e "Update packages \n"
-sudo apt-get update && apt-get upgrade
+sudo apt update && apt upgrade
 echo
 sleep 2
 echo -e "======================================== \n"

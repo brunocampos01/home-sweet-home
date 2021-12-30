@@ -26,7 +26,7 @@ sudo chmod +x initial_install.sh
 - [.bashrc](config/.bashrc)
 - [.vimrc](config/.vimrc)
 - [.conkyrc](config/.conkyrc)
-- [.jupyter](config/jupyter_notebook_config)
+- [.jupyter](config/jupyter_notebook_config.py)
 - [terminator](config/)
 
 ---

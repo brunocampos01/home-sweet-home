@@ -5,8 +5,9 @@
 ```bash
 mkdir projects/
 cd projects/
-git clone git@github.com:brunocampos01/home-sweet-home.git
-cd home-sweet-home/
+wget https://github.com/brunocampos01/home-sweet-home/archive/refs/heads/master.zip
+unzip master.zip
+cd home-sweet-home-master/
 ```
 
 ### Install 

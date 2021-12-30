@@ -10,12 +10,14 @@ cd home-sweet-home/
 
 mkdir $HOME/.config/terminator/
 cp config/terminal/terminator/config    $HOME/.config/terminator/
+
+mkdir $HOME/.oh-my-bash
+mkdir $HOME/.oh-my-bash/themes
+mkdir $HOME/.oh-my-bash/themes/zork/
 cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
 
 mkdir $HOME/.jupyter/
 cp config/jupyter_notebook_config.py    $HOME/.jupyter/
-mkdir  $HOME/.config/matplotlib/
-cp config/plot.ini                      $HOME/.config/matplotlib/
 
 cp config/.bashrc                       $HOME/
 cp config/.bash_eternal_history         $HOME/

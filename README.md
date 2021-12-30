@@ -1,30 +1,12 @@
 # Personal Configuration
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
-### Configure
+### Prepare Environment
 ```bash
 mkdir projects/
 cd projects/
 git clone git@github.com:brunocampos01/home-sweet-home.git
 cd home-sweet-home/
-
-mkdir $HOME/.config/terminator/
-cp config/terminal/terminator/config    $HOME/.config/terminator/
-
-mkdir $HOME/.oh-my-bash
-mkdir $HOME/.oh-my-bash/themes
-mkdir $HOME/.oh-my-bash/themes/zork/
-cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
-
-mkdir $HOME/.jupyter/
-cp config/jupyter_notebook_config.py    $HOME/.jupyter/
-
-cp config/.bashrc                       $HOME/
-cp config/.bash_eternal_history         $HOME/
-cp config/.vimrc                        $HOME/
-cp config/.gitconfig                    $HOME/
-mkdir  .vscode
-cp config/.vscode/*                     $HOME/
 ```
 
 ### Install 
@@ -44,10 +26,9 @@ sudo chmod +x initial_install.sh
 - [.bashrc](config/.bashrc)
 - [.vimrc](config/.vimrc)
 - [.conkyrc](config/.conkyrc)
-- [.matplotlib](config/.matplotlib)
 - [.jupyter](config/jupyter_notebook_config)
 - [terminator](config/)
-- [.vscode](config/)
+
 ---
 
 <p  align="left">

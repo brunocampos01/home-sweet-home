@@ -220,3 +220,16 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/inst
 sleep 2
 echo
 echo -e "======================================== \n"
+echo
+echo -e "Prepare configurations"
+cp config/terminal/terminator/config    $HOME/.config/terminator/
+cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
+mkdir $HOME/.jupyter/
+cp config/jupyter_notebook_config.py    $HOME/.jupyter/
+cp config/.bashrc                       $HOME/
+cp config/.bash_eternal_history         $HOME/
+cp config/.vimrc                        $HOME/
+cp config/.gitconfig                    $HOME/
+sleep 2
+echo
+echo -e "======================================== \n"

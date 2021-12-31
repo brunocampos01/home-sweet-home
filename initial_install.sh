@@ -212,18 +212,19 @@ echo
 echo -e "======================================== \n"
 cd ..
 sudo rm -r tmp/
-sudo apt autoclean
-sudo apt autoremove
+sudo apt autoclean -y
+sudo apt autoremove -y
 echo -e "======================================== \n"
 echo -e "Install Oh My BASH! "
-sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 sleep 2
 echo
 echo -e "======================================== \n"
 echo
 echo -e "Prepare configurations"
-cp config/terminal/terminator/config    $HOME/.config/terminator/
-cp config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
+mkdir $HOME/.config/terminator/
+cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/
+cp --force --verbose config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
 mkdir $HOME/.jupyter/
 cp config/jupyter_notebook_config.py    $HOME/.jupyter/
 cp config/.bashrc                       $HOME/

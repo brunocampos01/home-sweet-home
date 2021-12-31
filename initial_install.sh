@@ -110,7 +110,7 @@ echo -e "======================================== \n"
 echo -e "Set Docker:"
 echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
 sleep 60
-# echo -e "======================================== \n"
+echo -e "======================================== \n"
 echo -e "Install Vim Extesions"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 touch ~/.vimrc
@@ -173,8 +173,8 @@ echo
 echo -e "======================================== \n"
 cd ..
 sudo rm -r tmp/
-sudo apt autoclean -y
-sudo apt autoremove -y
+# sudo apt autoclean -y
+# sudo apt autoremove -y
 echo -e "======================================== \n"
 echo -e "Install Oh My BASH! "
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"

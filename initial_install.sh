@@ -142,6 +142,7 @@ sudo snap install vlc
 sudo snap install ffmpeg
 sudo snap install spotify
 sudo snap install shutter
+sudo snap install kolourpaint
 sudo snap install nmap
 sudo snap install qalculate
 sudo snap install bitwarden

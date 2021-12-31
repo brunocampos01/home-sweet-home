@@ -40,8 +40,10 @@ sudo apt install -y build-essential\
                  zlib1g-dev\
                  libgdbm-dev\
                  libreadline-dev\
+                 python\
                  python3\
                  python3-dev\
+                 python3-doc\
                  python3-venv\
                  python3-pip \
                  python3-widgetsnbextension \
@@ -51,7 +53,6 @@ python3 -m pip install -U pip\
 						 setuptools\
 						 wheel\
 						 virtualenv\
-						 pipenv\
                          flake8        
 
 # terminator need Python

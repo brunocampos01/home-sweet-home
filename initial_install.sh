@@ -15,7 +15,6 @@ sudo apt install -y unixodbc-dev\
                  tree\
                  git\
                  gitk\
-                 curl \
                  htop\
                  ncdu\
                  lame\
@@ -23,7 +22,6 @@ sudo apt install -y unixodbc-dev\
                  snapd\
                  apt-transport-https\
                  ca-certificates\
-                 curl\
                  wget\
                  p7zip-full\
                  software-properties-common\
@@ -40,7 +38,6 @@ sudo apt install -y build-essential\
                  zlib1g-dev\
                  libgdbm-dev\
                  libreadline-dev\
-                 python\
                  python3\
                  python3-dev\
                  python3-doc\
@@ -143,6 +140,7 @@ sudo snap install ffmpeg
 sudo snap install spotify
 sudo snap install shutter
 sudo snap install kolourpaint
+sudo snap install curl
 sudo snap install nmap
 sudo snap install qalculate
 sudo snap install bitwarden
@@ -153,8 +151,8 @@ sudo snap install flameshot
 sudo snap install simplescreenrecorder
 echo
 echo -e "======================================== \n"
-echo -e "flameshot as default: https://flameshot.org/guide/key-bindings/"
-sleep 2
+echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
+sleep 30
 echo
 echo -e "======================================== \n"
 echo

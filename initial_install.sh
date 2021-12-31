@@ -112,45 +112,6 @@ echo -e "======================================== \n"
 echo -e "Set Docker:"
 echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
 sleep 60
-echo -e "======================================== \n"
-echo -e "Install the Default JRE/JDK and maven"
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk version
-
-sdk install maven
-sdk install sbt
-sdk install scala
-sdk install spark
-sdk install java 8.0.282-open
-
-sleep 2
-echo
-echo -e "======================================== \n"
-echo -e "Test JRE/JDK and maven"
-java -version
-javac -version
-mvn -version
-echo
-echo -e "======================================== \n"
-# echo -e "Setup environment variables of Java and maven"
-# echo -e "Open New Terminal and set environment variables. SLEEP 60"
-# echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
-# echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
-# echo "source /etc/environment"
-# echo "echo $JAVA_HOME"
-# sleep 60
-# echo
-# echo -e "Open New Terminal and set maven variables. SLEEP 60"
-# echo "sudo chmod +x /etc/profile.d/maven.sh"
-# echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
-# echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
-# echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
-# echo "sudo source /etc/profile.d/maven.sh"
-# echo "echo $MAVEN_HOME"
-# echo "echo $PATH"
-# sleep 60
-# echo
 # echo -e "======================================== \n"
 echo -e "Install Vim Extesions"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -234,3 +195,41 @@ cp config/.gitconfig                    $HOME/
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Install the Default JRE/JDK and maven"
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+
+sdk install maven
+sdk install sbt
+sdk install scala
+sdk install spark
+sdk install java 8.0.282-open
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Test JRE/JDK and maven"
+java -version
+javac -version
+mvn -version
+echo
+echo -e "======================================== \n"
+# echo -e "Setup environment variables of Java and maven"
+# echo -e "Open New Terminal and set environment variables. SLEEP 60"
+# echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
+# echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
+# echo "source /etc/environment"
+# echo "echo $JAVA_HOME"
+# sleep 60
+# echo
+# echo -e "Open New Terminal and set maven variables. SLEEP 60"
+# echo "sudo chmod +x /etc/profile.d/maven.sh"
+# echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
+# echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
+# echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
+# echo "sudo source /etc/profile.d/maven.sh"
+# echo "echo $MAVEN_HOME"
+# echo "echo $PATH"
+# sleep 60
+# echo

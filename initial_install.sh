@@ -10,24 +10,25 @@ echo
 sleep 2
 echo -e "======================================== \n"
 echo -e "Install dependences\n"
-sudo apt install -y unixodbc-dev\
-                 vim \
-                 tree\
-                 git\
-                 gitk\
-                 htop\
-                 ncdu\
-                 lame\
-                 jq\
-                 snapd\
-                 apt-transport-https\
-                 ca-certificates\
-                 wget\
-                 p7zip-full\
-                 software-properties-common\
-                 ufw\
-                 speedtest-cli\
-                 bleachbit
+sudo apt install -y \
+    unixodbc-dev\
+    vim\
+    tree\
+    git\
+    gitk\
+    htop\
+    ncdu\
+    lame\
+    jq\
+    snapd\
+    apt-transport-https\
+    ca-certificates\
+    wget\
+    p7zip-full\
+    software-properties-common\
+    ufw\
+    speedtest-cli\
+    bleachbit
 sudo wget https://github.com/bcicen/ctop/releases/download/0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
 
@@ -42,8 +43,8 @@ sudo apt install -y build-essential\
                  python3-dev\
                  python3-doc\
                  python3-venv\
-                 python3-pip \
-                 python3-widgetsnbextension \
+                 python3-pip\
+                 python3-widgetsnbextension\
                  python3-testresources
 
 python3 -m pip install -U pip\

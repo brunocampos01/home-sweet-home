@@ -16,6 +16,12 @@ sudo chmod +x initial_install.sh
 ./initial_install.sh
 ```
 
+### Post Installation
+```
+hostnamectl set-hostname avell
+```
+
+
 #### Some Applications that are installed with `install.sh`
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)
 - [Oh my bash](https://ohmybash.github.io/)

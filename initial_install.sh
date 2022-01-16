@@ -1,8 +1,40 @@
 #!/bin/bash
 # ----------------------------------- #
+# My Apps
+# ----------------------------------- #
+
+snap_apps=(
+    hello-world
+    snap-store
+    postman
+    dbeaver-ce
+    evince
+    remmina
+    vlc
+    ffmpeg
+    spotify
+    shutter
+    kolourpaint
+    curl
+    nmap
+    qalculate
+    bitwarden
+    youtube-dl
+    gydl
+    telegram-desktop
+    flameshot
+    simplescreenrecorder
+)
+
+snap_apps_classic=(
+    code
+    pycharm-community
+    intellij-idea-community
+)
+
+
 mkdir tmp/
 cd tmp/
-
 
 echo -e "Update packages \n"
 sudo apt update && apt upgrade
@@ -16,15 +48,19 @@ sudo apt install -y \
     tree\
     git\
     gitk\
+    git-lfs\
     htop\
     ncdu\
     lame\
     jq\
     snapd\
+    gparted\
+    gnome-tweaks\
     apt-transport-https\
     ca-certificates\
     wget\
     p7zip-full\
+    ubuntu-restricted-extras\
     software-properties-common\
     ufw\
     speedtest-cli\
@@ -119,39 +155,28 @@ ln ~/.vimrc ~/.vim/vimrc
 vim +PluginInstall +qall
 sleep 2
 echo
+
 echo -e "======================================== \n"
 echo -e "Intall Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 sleep 2
 echo
+
 echo -e "======================================== \n"
 echo -e "Snap:"
-sudo snap install hello-world
-sudo snap install snap-store
-sudo snap install pycharm-community --classic
-sudo snap install intellij-idea-community --classic
-sudo snap install code --classic
-sudo snap install postman
-sudo snap install dbeaver-ce
-sudo snap install evince
-sudo snap install remmina
-sudo snap install vlc
-sudo snap install ffmpeg
-sudo snap install spotify
-sudo snap install shutter
-sudo snap install kolourpaint
-sudo snap install curl
-sudo snap install nmap
-sudo snap install qalculate
-sudo snap install bitwarden
-sudo snap install youtube-dl
-sudo snap install gydl
-sudo snap install telegram-desktop
-sudo snap install flameshot
-sudo snap install simplescreenrecorder
+# Snap installl app
+for app in ${snap_apps[@]}; do
+    sudo snap install "$app"
+done
+
+# Snap classic installl app
+for app in ${snap_apps_classic[@]}; do
+    sudo snap install --classic "$app"
+done
 echo
 echo -e "======================================== \n"
+
 echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
 sleep 30
 echo

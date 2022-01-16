@@ -3,6 +3,41 @@
 # My Apps
 # ----------------------------------- #
 
+deb_app=(
+    vim
+    tree
+    git
+    gitk
+    git-lfs
+    htop
+    ncdu
+    lame
+    jq
+    snapd
+    gparted
+    apt-transport-https
+    ca-certificates
+    wget
+    p7zip-full
+    rar
+    unrar
+    gnome-tweaks
+    ubuntu-restricted-extras
+    build-essential
+    software-properties-common
+    ufw
+    speedtest-cli
+    bleachbit
+)
+
+python_dependecies=(
+    python3
+    python3-dev
+    python3-doc
+    python3-venv
+    python3-pip
+)
+
 snap_apps=(
     hello-world
     snap-store
@@ -13,7 +48,6 @@ snap_apps=(
     vlc
     ffmpeg
     spotify
-    shutter
     kolourpaint
     curl
     nmap
@@ -32,139 +66,145 @@ snap_apps_classic=(
     intellij-idea-community
 )
 
+sdk_apps=(
+    maven
+    sbt
+    scala
+    spark
+    java 8.0.282-open
+)
+
+to_remove=(
+    firefox
+    firefox-locale-ar
+    firefox-locale-de
+    firefox-locale-en
+    firefox-locale-es
+    firefox-locale-fr
+    firefox-locale-it
+    firefox-locale-ja
+    firefox-locale-pt
+    firefox-locale-ru
+    firefox-locale-zh-hans
+    firefox-locale-zh-hant
+    flatpak
+    geary
+    libreoffice
+    libreoffice-base-core
+    libreoffice-common
+    libreoffice-core
+    libreoffice-help-common
+    libreoffice-style-colibre
+    libreoffice-style-tango
+    gnome-screenshot
+)
+
 
 mkdir tmp/
 cd tmp/
 
-echo -e "Update packages \n"
+echo -e "======================================== \n"
+echo -e "Update and upgrade"
+echo -e "======================================== \n"
+
 sudo apt update && apt upgrade
-echo
-sleep 2
-echo -e "======================================== \n"
-echo -e "Install dependences\n"
-sudo apt install -y \
-    unixodbc-dev\
-    vim\
-    tree\
-    git\
-    gitk\
-    git-lfs\
-    htop\
-    ncdu\
-    lame\
-    jq\
-    snapd\
-    gparted\
-    gnome-tweaks\
-    apt-transport-https\
-    ca-certificates\
-    wget\
-    p7zip-full\
-    ubuntu-restricted-extras\
-    software-properties-common\
-    ufw\
-    speedtest-cli\
-    bleachbit
-sudo wget https://github.com/bcicen/ctop/releases/download/0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop
-sudo chmod +x /usr/local/bin/ctop
 
-# python
-sudo apt install -y build-essential\
-                 libssl-dev\
-                 libffi-dev\
-                 zlib1g-dev\
-                 libgdbm-dev\
-                 libreadline-dev\
-                 python3\
-                 python3-dev\
-                 python3-doc\
-                 python3-venv\
-                 python3-pip\
-                 python3-widgetsnbextension\
-                 python3-testresources
-
-python3 -m pip install -U pip\
-						 setuptools\
-						 wheel\
-						 virtualenv\
-                         flake8        
-
-# terminator need Python
-sudo apt install -y terminator
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Check Python Version:"
-sudo python3 --version
-sudo which python
-echo
+echo -e "Installing Debian apps"
 echo -e "======================================== \n"
-echo -e "Snap Test:"
-sudo snap install hello-world
-echo
-echo -e "======================================== \n"
-echo -e "Generate ssh keys:"
-cd ~/.ssh
-ssh-keygen -t rsa -N "" -f id_rsa
-cat id_rsa.pub
-cd ~/tmp/
-echo
-sleep 2
-echo -e "======================================== \n"
-echo -e "UFW Status:"
-sudo ufw enable
-sudo ufw status verbose
-echo -e "======================================== \n"
-echo -e "Install Ccat (collored cat)"
-wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
-tar xfz linux-amd64-1.1.0.tar.gz 
-sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
-sudo chmod +x /usr/local/bin/ccat
-echo
-sleep 2
-echo -e "======================================== \n"
-echo -e "Install Docker "
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
 
-curl -fsSL https://test.docker.com -o test-docker.sh
-sh test-docker.sh
+for app in ${deb_app[@]}; do
+    sudo apt install "$app" -y
+done
 
-sh install.sh
-make check
+for app in ${python_dependecies[@]}; do
+    sudo apt install "$app" -y
+done
+
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Install Docker compose:"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+echo -e "Installing Python Packages"
+echo -e "======================================== \n"
 
-docker-compose --version
+python3 -m pip install -U setuptools\
+						  wheel\
+                          pip-tools
+
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Set Docker:"
-echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
-sleep 60
+echo -e "Installing Vim Extesions"
 echo -e "======================================== \n"
-echo -e "Install Vim Extesions"
+
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 touch ~/.vimrc
 ln ~/.vimrc ~/.vim/vimrc
 vim +PluginInstall +qall
+
 sleep 2
 echo
-
 echo -e "======================================== \n"
-echo -e "Intall Chrome"
+echo -e "Installing Ctop"
+echo -e "======================================== \n"
+
+sudo wget https://github.com/bcicen/ctop/releases/download/0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Ccat (collored cat)"
+echo -e "======================================== \n"
+
+wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
+tar xfz linux-amd64-1.1.0.tar.gz 
+sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
+sudo chmod +x /usr/local/bin/ccat
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Chrome"
+echo -e "======================================== \n"
+
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
 sleep 2
 echo
-
 echo -e "======================================== \n"
-echo -e "Snap:"
+echo -e "Installing Termintor"
+echo -e "======================================== \n"
+
+sudo apt install -y terminator
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Linux System Optimizer & Monitoring"
+echo -e "======================================== \n"
+
+sudo add-apt-repository ppa:oguzhaninan/stacer -y
+sudo apt-get update
+sudo apt-get install stacer -y
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Snap Test"
+echo -e "======================================== \n"
+
+sudo snap install hello-world
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Snap apps"
+echo -e "======================================== \n"
+
 # Snap installl app
 for app in ${snap_apps[@]}; do
     sudo snap install "$app"
@@ -174,45 +214,147 @@ done
 for app in ${snap_apps_classic[@]}; do
     sudo snap install --classic "$app"
 done
+
+sleep 2
 echo
+echo -e "======================================== \n"
+echo -e "Installing VSCode extesions"
 echo -e "======================================== \n"
 
-echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
-sleep 30
-echo
-echo -e "======================================== \n"
-echo -e "Linux System Optimizer & Monitoring"
-sudo add-apt-repository ppa:oguzhaninan/stacer
-sudo apt-get update
-sudo apt-get install stacer -y
-echo
-echo -e "======================================== \n"
-echo -e "VSCode extesions"
 code --version
 code --install-extension ms-python.python
 code --install-extension PKief.material-icon-theme
-code --install-extension garytyler.darcula-pycharm
+# code --install-extension garytyler.darcula-pycharm
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension vscjava.vscode-java-pac
 code --install-extension ms-python.python
 code --install-extension SonarSource.sonarlint-vscode # java lint
 code --list-extensions
+
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Installing SDKMAN (JRE/JDK, scala, spark, maven, sbt)"
+echo -e "======================================== \n"
+
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing SDKMAN apps"
+echo -e "======================================== \n"
+
+for app in ${sdk_apps[@]}; do
+    sdk install "$app"
+done
+
+# tests
+java -version
+javac -version
+mvn -version
+
+echo
+sleep 2
+echo -e "======================================== \n"
+echo -e "Installing Docker"
+echo -e "======================================== \n"
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+curl -fsSL https://test.docker.com -o test-docker.sh
+sh test-docker.sh
+sh install.sh
+make check
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Docker Compose"
+echo -e "======================================== \n"
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Generate ssh keys"
+echo -e "======================================== \n"
+
+mkdir ~/.ssh
+cd ~/.ssh
+ssh-keygen -t rsa -N "" -f id_rsa
+cat id_rsa.pub
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Preparing UFW"
+echo -e "======================================== \n"
+
+sudo ufw enable
+sudo ufw status verbose
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Set Docker"
+echo -e "======================================== \n"
+
+echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
+
+sleep 60
+echo
+echo -e "======================================== \n"
+echo -e "Set screenshot"
+echo -e "======================================== \n"
+
+echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
+
+sleep 30
+echo
+echo -e "======================================== \n"
+echo -e "Set SSH Github"
+echo -e "======================================== \n"
+
+echo -e "Open this link: https://github.com/settings/ssh/new"
+echo -e "Title: $(hostname)"
+echo -e "Key:\n$(cat ~/.ssh/id_rsa.pub)"
+
+sleep 30
+echo
+echo -e "======================================== \n"
+echo -e "Remove apps"
+echo -e "======================================== \n"
+
+for app in ${to_remove[@]}; do
+  sudo apt remove "$app" -y
+done
+sudo apt autoremove -y && sudo apt autoclean -y
+
 cd ..
 sudo rm -r tmp/
-# sudo apt autoclean -y
-# sudo apt autoremove -y
-echo -e "======================================== \n"
-echo -e "Install Oh My BASH! "
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Installing Oh My BASH! "
+echo -e "======================================== \n"
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+sleep 2
 echo
-echo -e "Prepare configurations"
+echo -e "======================================== \n"
+echo -e "Downloading predefined configurations"
+echo -e "======================================== \n"
+
 mkdir $HOME/.config/terminator/
 cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/
 cp --force --verbose config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
@@ -222,44 +364,7 @@ cp config/.bashrc                       $HOME/
 cp config/.bash_eternal_history         $HOME/
 cp config/.vimrc                        $HOME/
 cp config/.gitconfig                    $HOME/
-sleep 2
-echo
-echo -e "======================================== \n"
-echo -e "Install the Default JRE/JDK and maven"
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk version
-
-sdk install maven
-sdk install sbt
-sdk install scala
-sdk install spark
-sdk install java 8.0.282-open
 
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Test JRE/JDK and maven"
-java -version
-javac -version
-mvn -version
-echo
-echo -e "======================================== \n"
-# echo -e "Setup environment variables of Java and maven"
-# echo -e "Open New Terminal and set environment variables. SLEEP 60"
-# echo "sudo export JAVA_HOME=/usr/lib/jvm/default-java > /etc/profile.d/maven.sh"
-# echo "export JAVA_HOME="/usr/lib/jvm/<JAVA_VERSION>" > /etc/environment"
-# echo "source /etc/environment"
-# echo "echo $JAVA_HOME"
-# sleep 60
-# echo
-# echo -e "Open New Terminal and set maven variables. SLEEP 60"
-# echo "sudo chmod +x /etc/profile.d/maven.sh"
-# echo "sudo export M2_HOME=/opt/maven > /etc/profile.d/maven.sh"
-# echo "sudo export MAVEN_HOME=/opt/maven > /etc/profile.d/maven.sh"
-# echo "sudo export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/maven.sh"
-# echo "sudo source /etc/profile.d/maven.sh"
-# echo "echo $MAVEN_HOME"
-# echo "echo $PATH"
-# sleep 60
-# echo

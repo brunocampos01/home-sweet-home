@@ -156,6 +156,10 @@ echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bi
 sleep 30
 echo
 echo -e "======================================== \n"
+echo -e "Linux System Optimizer & Monitoring"
+sudo add-apt-repository ppa:oguzhaninan/stacer
+sudo apt-get update
+sudo apt-get install stacer -y
 echo
 echo -e "======================================== \n"
 echo -e "VSCode extesions"

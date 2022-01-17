@@ -28,6 +28,7 @@ deb_app=(
     ufw
     speedtest-cli
     bleachbit
+    libappindicator3-1 # audio lib
 )
 
 python_dependecies=(

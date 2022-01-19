@@ -21,6 +21,9 @@ deb_app=(
     p7zip-full
     rar
     unrar
+    hddtemp # HDD temperature
+    lm-sensors # CPU temperature
+    psensor # graphic interface
     gnome-tweaks
     ubuntu-restricted-extras
     build-essential
@@ -328,7 +331,17 @@ echo -e "Open this link: https://github.com/settings/ssh/new"
 echo -e "Title: $(hostname)"
 echo -e "Key:\n$(cat ~/.ssh/id_rsa.pub)"
 
-sleep 30
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Set lm-sensors"
+echo -e "======================================== \n"
+
+sudo sensors-detect 
+sudo service kmod start
+# watch sensors
+
+sleep 2
 echo
 echo -e "======================================== \n"
 echo -e "Remove apps"

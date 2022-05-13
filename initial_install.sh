@@ -12,6 +12,7 @@ deb_app=(
     htop
     ncdu
     lame
+    lynis
     jq
     snapd
     gparted
@@ -354,6 +355,14 @@ sudo apt autoremove -y && sudo apt autoclean -y
 
 cd ..
 sudo rm -r tmp/
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Audit System"
+echo -e "======================================== \n"
+
+sudo lynis audit system
 
 sleep 2
 echo

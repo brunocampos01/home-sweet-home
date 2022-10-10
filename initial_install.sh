@@ -63,6 +63,7 @@ snap_apps=(
     telegram-desktop
     flameshot
     simplescreenrecorder
+    studio
 )
 
 snap_apps_classic=(

@@ -202,6 +202,15 @@ echo
 echo -e "======================================== \n"
 echo -e "Snap Test"
 echo -e "======================================== \n"
+sudo apt-add-repository ppa:audio-recorder/ppa
+sudo apt update
+sudo apt install audio-recorder
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Snap Test"
+echo -e "======================================== \n"
 
 sudo snap install hello-world
 

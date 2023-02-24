@@ -245,6 +245,7 @@ code --install-extension ms-vscode-remote.remote-containers
 code --install-extension vscjava.vscode-java-pac
 code --install-extension ms-python.python
 code --install-extension SonarSource.sonarlint-vscode # java lint
+code --install-extension AykutSarac.jsoncrack-vscode 
 code --list-extensions
 
 sleep 2

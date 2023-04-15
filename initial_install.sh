@@ -388,6 +388,15 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/mast
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Ubuntu Customization "
+echo -e "======================================== \n"
+
+sudo apt-add-repository universe
+sudo apt install gnome-tweaks
+
+sleep 2
+echo
+echo -e "======================================== \n"
 echo -e "Downloading predefined configurations"
 echo -e "======================================== \n"
 

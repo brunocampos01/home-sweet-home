@@ -391,14 +391,14 @@ echo -e "Downloading predefined configurations"
 echo -e "======================================== \n"
 
 mkdir $HOME/.config/terminator/
-cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/
-cp --force --verbose config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/
+cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/ # yes
+cp --force --verbose config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/ # yes
 mkdir $HOME/.jupyter/
-cp config/jupyter_notebook_config.py    $HOME/.jupyter/
-cp config/.bashrc                       $HOME/
-cp config/.bash_eternal_history         $HOME/
-cp config/.vimrc                        $HOME/
-cp config/.gitconfig                    $HOME/
+cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
+cp config/.bashrc                       $HOME/ # yes
+cp config/.bash_eternal_history         $HOME/ # yes
+cp config/.vimrc                        $HOME/ # yes
+cp config/.gitconfig                    $HOME/ # yes
 
 sleep 2
 echo

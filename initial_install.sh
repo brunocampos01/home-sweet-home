@@ -33,6 +33,7 @@ deb_app=(
     speedtest-cli
     bleachbit
     libappindicator3-1 # audio lib
+    folder-color
 )
 
 python_dependecies=(

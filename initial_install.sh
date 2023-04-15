@@ -44,6 +44,7 @@ python_dependecies=(
 )
 
 snap_apps=(
+    docker
     hello-world
     snap-store
     postman
@@ -273,18 +274,18 @@ java -version
 javac -version
 mvn -version
 
-echo
-sleep 2
-echo -e "======================================== \n"
-echo -e "Installing Docker"
-echo -e "======================================== \n"
+# echo
+# sleep 2
+# echo -e "======================================== \n"
+# echo -e "Installing Docker"
+# echo -e "======================================== \n"
 
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-curl -fsSL https://test.docker.com -o test-docker.sh
-sh test-docker.sh
-sh install.sh
-make check
+# curl -fsSL https://get.docker.com -o get-docker.sh
+# sh get-docker.sh
+# curl -fsSL https://test.docker.com -o test-docker.sh
+# sh test-docker.sh
+# sh install.sh
+# make check
 
 sleep 2
 echo

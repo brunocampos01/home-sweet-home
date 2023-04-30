@@ -21,6 +21,12 @@ sudo chmod +x initial_install.sh
 hostnamectl set-hostname avell
 ```
 
+### Benckmark
+```
+wget https://phoronix-test-suite.com/releases/repo/pts.debian/files/phoronix-test-suite_10.8.4_all.deb
+phoronix-test-suite default-benchmark openarena xonotic tesseract gputest unigine-valley
+```
+
 
 #### Some Applications that are installed with `install.sh`
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)

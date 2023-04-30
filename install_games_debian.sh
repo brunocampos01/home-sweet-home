@@ -13,6 +13,9 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # ---------------------------------------------------------------
 # Install Nvidia Drivers
 # ---------------------------------------------------------------
+lspci | grep -e VGA
+lsmod | grep nouveau
+ubuntu-drivers devices
 nvidia-detector
 
 

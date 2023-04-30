@@ -13,7 +13,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # ---------------------------------------------------------------
 # Install Nvidia Drivers
 # ---------------------------------------------------------------
-# ...
+nvidia-detector
+
 
 
 # ---------------------------------------------------------------
@@ -36,4 +37,7 @@ flatpak install Bottles
 # Install Libraries
 # ---------------------------------------------------------------
 # Wine
+sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y wine64 wine32 libasound2-plugins:i386 libsdl2-2.0-0:i386 libdbus-1-3:i386 libsqlite3-0:i386
+
+# Wine caffe
 wget https://github.com/bottlesdevs/wine/releases/download/caffe-7.20/caffe-7.20-x86_64.tar.xz

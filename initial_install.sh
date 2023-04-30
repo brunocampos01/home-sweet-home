@@ -184,6 +184,15 @@ sudo apt install -y ./google-chrome-stable_current_amd64.deb
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Installing balena-etcher (pendrive - boot)"
+echo -e "======================================== \n"
+
+wget https://github.com/balena-io/etcher/releases/download/v1.18.8/balena-etcher_1.18.8_amd64.deb
+sudo apt install -y ./balena-etcher_1.18.8_amd64.deb
+
+sleep 2
+echo
+echo -e "======================================== \n"
 echo -e "Installing Termintor"
 echo -e "======================================== \n"
 
@@ -335,7 +344,7 @@ echo -e "======================================== \n"
 
 echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
 
-sleep 30
+sleep 60
 echo
 echo -e "======================================== \n"
 echo -e "Set SSH Github"

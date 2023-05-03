@@ -34,6 +34,7 @@ deb_app=(
     bleachbit
     libappindicator3-1 # audio lib
     folder-color
+    trash-cli
 )
 
 python_dependecies=(

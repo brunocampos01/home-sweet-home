@@ -14,7 +14,6 @@ deb_app=(
     lame
     lynis
     jq
-    snapd
     gparted
     apt-transport-https
     ca-certificates
@@ -217,7 +216,7 @@ sudo apt-get install stacer -y
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Snap Test"
+echo -e "Audio Recorder"
 echo -e "======================================== \n"
 sudo apt-add-repository ppa:audio-recorder/ppa
 sudo apt update
@@ -226,9 +225,12 @@ sudo apt install audio-recorder
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Snap Test"
+echo -e "Snap installation and Test"
 echo -e "======================================== \n"
 
+sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup
+sudo apt update
+sudo apt install snapd
 sudo snap install hello-world
 
 sleep 2

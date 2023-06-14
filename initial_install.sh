@@ -21,6 +21,7 @@ deb_app=(
     p7zip-full
     rar
     unrar
+    flameshot
     hddtemp # HDD temperature
     lm-sensors # CPU temperature
     psensor # graphic interface
@@ -63,7 +64,6 @@ snap_apps=(
     youtube-dl
     gydl
     telegram-desktop
-    flameshot
     simplescreenrecorder
     studio
 )

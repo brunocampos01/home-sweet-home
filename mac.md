@@ -21,6 +21,28 @@ brew install --cask google-chrome
 
 ---
 
+# Set up
+## .local/bin in $PATH
+```
+mkdir -p $HOME/.local/bin
+set -Ua fish_user_paths $HOME/.local/bin
+
+# test
+zsh -c "echo $PATH"
+```
+
+## SSH keys
+```
+mkdir -p $HOME/.local/bin
+set -Ua fish_user_paths $HOME/.local/bin
+
+# test
+zsh -c "echo $PATH"
+```
+
+
+---
+
 # Shortcuts
 
 

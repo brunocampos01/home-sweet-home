@@ -8,3 +8,8 @@
 ```
 brew install --cask alt-tab
 ```
+
+### Chrome
+```
+brew install --cask google-chrome
+```

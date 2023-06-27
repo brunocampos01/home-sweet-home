@@ -44,6 +44,8 @@ zsh -c "echo $PATH"
 ---
 
 # Shortcuts
+## Terminator
+![image](https://github.com/brunocampos01/home-sweet-home/assets/12896018/15352aa7-2047-47e7-a30e-9aa11a466e88)
 
 
 ## Chrome: Refresh Page

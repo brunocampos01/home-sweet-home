@@ -103,6 +103,9 @@ zsh -c "echo $PATH"
 ```
 
 
+tiling windows using shortcut
+https://www.youtube.com/watch?v=k94qImbFKWE&ab_channel=JoseanMartinez
+
 ---
 
 # Shortcuts

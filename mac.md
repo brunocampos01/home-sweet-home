@@ -1,17 +1,53 @@
-## MacOS
-### Brew
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Alt+Tab
-```
-brew install --cask alt-tab
-```
-
-### Chrome
+# MacOS
 ```
 brew install --cask google-chrome
+
+echo -e "======================================== \n"
+echo -e "Instaling Brew"
+echo -e "======================================== \n"
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Alt+Tab"
+echo -e "======================================== \n"
+
+brew install --cask alt-tab
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Chrome"
+echo -e "======================================== \n"
+
+brew install --cask google-chrome
+
+sleep 2
+echo
+```
+
+## Predefined Configs
+```
+echo -e "======================================== \n"
+echo -e "Downloading predefined configurations"
+echo -e "======================================== \n"
+
+mkdir $HOME/.config/terminator/
+cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/ # yes
+cp --force --verbose config/terminal/mac/my_theme.zsh-theme   $HOME/.oh-my-zsh/themes/ # yes
+mkdir $HOME/.jupyter/
+cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
+cp config/.bashrc                       $HOME/ # yes
+cp config/.bash_eternal_history         $HOME/ # yes
+cp config/.vimrc                        $HOME/ # yes
+cp config/.gitconfig                    $HOME/ # yes
+
+sleep 2
+echo
+
+
 ```
 
 ### Flameshot

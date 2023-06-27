@@ -1,6 +1,6 @@
 # MacOS
 ```
-brew install --cask google-chrome
+xcode-select --install
 
 echo -e "======================================== \n"
 echo -e "Instaling Brew"
@@ -23,6 +23,16 @@ echo -e "Installing Chrome"
 echo -e "======================================== \n"
 
 brew install --cask google-chrome
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing yabai(Tiling Windows)"
+echo -e "======================================== \n"
+
+brew install koekeishiya/formulae/yabai
+yabai --start-service
+yabai --restart-service
 
 sleep 2
 echo

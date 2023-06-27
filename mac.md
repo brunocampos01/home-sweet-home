@@ -15,11 +15,16 @@ brew install --cask google-chrome
 ```
 
 ### Flameshot
-(DMG)[https://flameshot.org/docs/installation/installation-osx/]
+- ctrl + shit + x
+- [DMG](https://flameshot.org/docs/installation/installation-osx/)
+
 
 ---
 
-# Chrome: Refresh Page
+# Shortcuts
+
+
+## Chrome: Refresh Page
 ![image](https://github.com/brunocampos01/home-sweet-home/assets/12896018/13dd2fa7-a309-47ff-9df0-c8d85a21cd40)
 
 

@@ -11,6 +11,14 @@ echo -e "======================================== \n"
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Instaling Iterm2"
+echo -e "======================================== \n"
+
+brew install --cask iterm2
+
+sleep 2
+echo
+echo -e "======================================== \n"
 echo -e "Installing Alt+Tab"
 echo -e "======================================== \n"
 
@@ -36,6 +44,14 @@ yabai --restart-service
 
 sleep 2
 echo
+echo -e "======================================== \n"
+echo -e "zsh-autosuggestions"
+echo -e "======================================== \n"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+sleep 2
+echo
 ```
 
 ## Predefined Configs
@@ -44,9 +60,11 @@ echo -e "======================================== \n"
 echo -e "Downloading predefined configurations"
 echo -e "======================================== \n"
 
-mkdir $HOME/.config/terminator/
-cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/ # yes
-cp --force --verbose config/terminal/mac/my_theme.zsh-theme   $HOME/.oh-my-zsh/themes/ # yes
+cd .oh-my-zsh/themes 
+git clone git@github.com:romkatv/powerlevel10k.git
+
+
+
 mkdir $HOME/.jupyter/
 cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
 cp config/.bashrc                       $HOME/ # yes
@@ -56,8 +74,6 @@ cp config/.gitconfig                    $HOME/ # yes
 
 sleep 2
 echo
-
-
 ```
 
 ### Flameshot

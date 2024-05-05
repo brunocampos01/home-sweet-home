@@ -35,9 +35,39 @@ brew install --cask google-chrome
 sleep 2
 echo
 echo -e "======================================== \n"
+echo -e "Installing Java"
+echo -e "======================================== \n"
+
+brew install openjdk@8
+brew install --cask anaconda
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing complements"
+echo -e "======================================== \n"
+
+brew install trash
+brew install ncdu
+brew install htop
+brew install jq
+brew install cmatrix
+brew install blackhole-2ch # virtual driver audio, useful to rec internal audio
+brew install --cask keepingyouawake # prevent your Mac from entering sleep mode
+brew install --cask stats # system monitor in your menu bar
+
+
+brew install --cask postman
+brew install --cask pycharm-ce
+brew install --cask visual-studio-code
+
+sleep 2
+echo
+echo -e "======================================== \n"
 echo -e "Installing yabai(Tiling Windows)"
 echo -e "======================================== \n"
 
+brew install --cask rectangle # good substitute for yabai
 brew install koekeishiya/formulae/yabai
 yabai --start-service
 yabai --restart-service
@@ -60,17 +90,20 @@ echo -e "======================================== \n"
 echo -e "Downloading predefined configurations"
 echo -e "======================================== \n"
 
-cd .oh-my-zsh/themes 
-git clone git@github.com:romkatv/powerlevel10k.git
-
-
-
 mkdir $HOME/.jupyter/
 cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
-cp config/.bashrc                       $HOME/ # yes
-cp config/.bash_eternal_history         $HOME/ # yes
 cp config/.vimrc                        $HOME/ # yes
 cp config/.gitconfig                    $HOME/ # yes
+cp .config/                             $HOME/ # yes
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Set up Iterm"
+echo -e "======================================== \n"
+cd .oh-my-zsh/themes
+git clone git@github.com:romkatv/powerlevel10k.git
+p10k configure
 
 sleep 2
 echo
@@ -103,8 +136,13 @@ zsh -c "echo $PATH"
 ```
 
 
-tiling windows using shortcut
+- tiling windows using shortcut
 https://www.youtube.com/watch?v=k94qImbFKWE&ab_channel=JoseanMartinez
+
+- rectangule
+- hyper terminal
+- pyenv
+- Stats
 
 ---
 
@@ -116,4 +154,6 @@ https://www.youtube.com/watch?v=k94qImbFKWE&ab_channel=JoseanMartinez
 ## Chrome: Refresh Page
 ![image](https://github.com/brunocampos01/home-sweet-home/assets/12896018/13dd2fa7-a309-47ff-9df0-c8d85a21cd40)
 
-
+## To Analyse
+- https://github.com/FelixKratz/SketchyBar
+- https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)

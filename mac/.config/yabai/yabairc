@@ -1,0 +1,88 @@
+# doc: https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+# yabai --start-service
+# yabai --stop-service
+
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# ----------------------------------------------------------------------------
+# padding, general space settings
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+yabai -m config top_padding 12
+yabai -m config bottom_padding 14
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+# ----------------------------------------------------------------------------
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+# ----------------------------------------------------------------------------
+# disable settings
+yabai -m config window_topmost      off
+yabai -m config auto_balance        off
+yabai -m config window_opacity      off
+yabai -m config window_border       off
+yabai -m config focus_follows_mouse off
+yabai -m config mouse_follows_focus off
+# ----------------------------------------------------------------------------
+
+# disable specific apps
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="About This Mac" manage=off
+yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Safari$" manage=off
+yabai -m rule --add app="^Voice Memos$" manage=off
+yabai -m rule --add app="^Audio MIDI Setup$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
+yabai -m rule --add app="^Siri$" manage=off
+yabai -m rule --add app="^Books$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Trash$" manage=off
+yabai -m rule --add app="^Clock$" manage=off
+yabai -m rule --add app="^Shortcuts$" manage=off
+yabai -m rule --add app="^Terminal$" manage=off
+yabai -m rule --add label="Software Update" title="Software Update" manage=off
+
+# external app
+yabai -m rule --add app="^Microsoft Remote Desktop Beta$" manage=off
+yabai -m rule --add app="^Microsoft Teams$" manage=off
+yabai -m rule --add app="^Azure Data Studio$" manage=off
+yabai -m rule --add app="^DBeaver$" manage=off
+yabai -m rule --add app="^DBeaver-community$" manage=off
+yabai -m rule --add app="^DBeaver 23.0.4$" manage=off
+yabai -m rule --add app="^dbeaver$" manage=off
+yabai -m rule --add label="^DBeaver$" title="^DBeaver$" manage=off
+yabai -m rule --add app="^jumpcloud$" manage=off
+yabai -m rule --add app="^AltTab$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Anki$" manage=off
+yabai -m rule --add app="^Flameshot$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^AltTab$" manage=off
+yabai -m rule --add app="^GitX$" manage=off
+yabai -m rule --add app="^OBS$" manage=off
+yabai -m rule --add app="^jumpcloud$" manage=off
+
+echo "yabai configuration loaded.."

@@ -99,8 +99,9 @@ cp .config/                             $HOME/ # yes
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Set up Iterm"
+echo -e "Set up terminal"
 echo -e "======================================== \n"
+# doc: https://github.com/romkatv/powerlevel10k
 cd .oh-my-zsh/themes
 git clone git@github.com:romkatv/powerlevel10k.git
 p10k configure

@@ -17,7 +17,7 @@ alias pip=pip3
 alias rm=trash
 
 # set prompt %s λ or └─▪ or →
-#PS1="[\d \t] \u@\h\n\w\$ "
+# PS1="[\d \t] \u@\h\n\w\$ "
 
 #---------------------------------------------------------------
 # History
@@ -30,7 +30,7 @@ HISTCONTROL=erasedups
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# Setting HIST to a value less than zero causes the history list to be unlimited 
+# Setting HIST to a value less than zero causes the history list to be unlimited
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 export HISTFILE=~/.bash_eternal_history
@@ -169,7 +169,7 @@ eval "$( dircolors --sh $(ls -d ~/.dircolors 2>/dev/null) )"
 # ex = (EXEC) Executable file (ie. has 'x' set in permissions)
 # fi = (FILE) Normal file
 # *.extension =   Every file using this extension e.g. *.rpm = files with the ending .rpm
-LS_COLORS=$LS_COLORS:'di=1;93:ex=1;33:*.gitignore=34:*LICENSE=34:*.editorconfig=34' ; 
+LS_COLORS=$LS_COLORS:'di=1;93:ex=1;33:*.gitignore=34:*LICENSE=34:*.editorconfig=34' ;
 
 _ls_colors_add() {
   local BASE_COLOR="${LS_COLORS##*:?.$1=}" NEW

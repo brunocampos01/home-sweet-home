@@ -18,7 +18,7 @@ sudo chmod +x initial_install.sh
 
 ### Post Installation
 ```
-hostnamectl set-hostname avell
+hostnamectl set-hostname <computer_name>
 ```
 
 ### Benckmark

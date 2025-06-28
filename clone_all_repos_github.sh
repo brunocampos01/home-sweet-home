@@ -25,5 +25,6 @@ echo "$LIST_REPOS" | while read -r repo; do
   else
     echo "Cloning $repo ..."
     git clone "$repo"
+    echo "-----------------"
   fi
 done

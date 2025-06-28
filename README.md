@@ -10,7 +10,7 @@ unzip master.zip
 cd home-sweet-home-master/
 ```
 
-### Install 
+### Install
 ```bash
 sudo chmod +x initial_install.sh
 ./initial_install.sh
@@ -19,6 +19,8 @@ sudo chmod +x initial_install.sh
 ### Post Installation
 ```
 hostnamectl set-hostname <computer_name>
+sudo chmod +x projects/home-sweet-home-master/clone_all_repos_github.sh
+projects/home-sweet-home-master/clone_all_repos_github.sh
 ```
 
 ### Benckmark
@@ -31,7 +33,6 @@ phoronix-test-suite default-benchmark openarena xonotic tesseract gputest unigin
 #### Some Applications that are installed with `install.sh`
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/index.html)
 - [Oh my bash](https://ohmybash.github.io/)
-- [snapd](https://snapcraft.io)
 - [Linux System Optimizer & Monitoring](https://oguzhaninan.github.io/Stacer-Web/)
 - [Boot pendrive](https://www.balena.io/etcher/)
 

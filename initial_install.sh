@@ -59,12 +59,12 @@ python_dep=(
 
 snap_apps=(
     snap-store
-    bitwarden
-    youtube-dl
-    gydl
-    telegram-desktop
-    simplescreenrecorder
-    studio
+    # bitwarden
+    # youtube-dl
+    # gydl
+    # telegram-desktop
+    # simplescreenrecorder
+    # studio
 )
 
 sdk_apps=(

@@ -35,6 +35,11 @@ deb_app=(
     libappindicator3-1 # audio lib
     folder-color
     trash-cli
+    ffmpeg # anki
+    mpv # anki
+    libxcb-xinerama0 # anki
+    libxcb-cursor0 # anki
+    libnss3 # anki
 )
 
 python_dep=(
@@ -46,7 +51,6 @@ python_dep=(
 )
 
 snap_apps=(
-    docker
     hello-world
     snap-store
     postman
@@ -54,7 +58,6 @@ snap_apps=(
     evince
     remmina
     vlc
-    ffmpeg
     spotify
     kolourpaint
     curl

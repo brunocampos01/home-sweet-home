@@ -40,6 +40,13 @@ deb_app=(
     libxcb-xinerama0 # anki
     libxcb-cursor0 # anki
     libnss3 # anki
+    evince
+    remmina
+    vlc
+    kolourpaint
+    curl
+    nmap
+    qalculate-gtk
 )
 
 python_dep=(
@@ -51,18 +58,7 @@ python_dep=(
 )
 
 snap_apps=(
-    hello-world
     snap-store
-    postman
-    dbeaver-ce
-    evince
-    remmina
-    vlc
-    spotify
-    kolourpaint
-    curl
-    nmap
-    qalculate
     bitwarden
     youtube-dl
     gydl
@@ -239,6 +235,33 @@ echo -e "======================================== \n"
 for app in ${snap_apps[@]}; do
     sudo snap install "$app"
 done
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Spotify"
+echo -e "======================================== \n"
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor -o /usr/share/keyrings/spotify.gpg
+echo "deb [signed-by=/usr/share/keyrings/spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install -y spotify-client
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing DBeaver Community"
+echo -e "======================================== \n"
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/dbeaver.gpg
+echo "deb [signed-by=/usr/share/keyrings/dbeaver.gpg] https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt update
+sudo apt install -y dbeaver-ce
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Postman"
+echo -e "======================================== \n"
+flatpak install -y flathub com.getpostman.Postman
 
 sleep 2
 echo

@@ -174,10 +174,10 @@ echo -e "Installing balena-etcher (pendrive - boot)"
 echo -e "======================================== \n"
 # wget https://github.com/balena-io/etcher/releases/download/v1.18.8/balena-etcher_1.18.8_amd64.deb
 # sudo apt install -y ./balena-etcher_1.18.8_amd64.deb
-sudo sh -c "echo 'deb https://dl.bintray.com/resin-io/debian stable etcher' >> /etc/apt/sources.list.d/etcher.list"
-sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 379CE192D401AB61
-sudo apt-get update
-sudo apt-get install etcher-electron
+# sudo sh -c "echo 'deb https://dl.bintray.com/resin-io/debian stable etcher' >> /etc/apt/sources.list.d/etcher.list"
+# sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 379CE192D401AB61
+# sudo apt-get update
+# sudo apt-get install etcher-electron
 
 sleep 2
 echo
@@ -185,6 +185,15 @@ echo -e "======================================== \n"
 echo -e "Installing Termintor"
 echo -e "======================================== \n"
 sudo apt install -y terminator
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Hyper"
+echo -e "======================================== \n"
+wget -O hyper.deb https://releases.hyper.is/download/deb
+sudo dpkg -i hyper.deb
+sudo apt -f install
 
 sleep 2
 echo

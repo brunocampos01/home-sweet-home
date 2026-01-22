@@ -2,12 +2,25 @@
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
 ### Prepare Environment
+Linux/Mac
 ```bash
 mkdir projects/
 cd projects/
 wget https://github.com/brunocampos01/home-sweet-home/archive/refs/heads/master.zip
 unzip master.zip
 cd home-sweet-home-master/
+```
+Windows
+```bash
+mkdir projects
+cd projects
+
+Invoke-WebRequest `
+  -Uri https://github.com/brunocampos01/home-sweet-home/archive/refs/heads/master.zip `
+  -OutFile master.zip
+
+Expand-Archive -Path master.zip -DestinationPath .
+cd home-sweet-home-master
 ```
 
 ### Install

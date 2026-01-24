@@ -1,28 +1,61 @@
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# -----------------------------------------
+#  Auto install Chocolatey + Apps (silent)
+# -----------------------------------------
 
-choco install python                                --force --yes --ignore-checksums --no-progress
-choco install ojdkbuild8                            --force --yes --ignore-checksums --no-progress
-choco install jre8                                  --force --yes --ignore-checksums --no-progress
-choco install jdk8                                  --force --yes --ignore-checksums
-choco install maven                                 --force --yes --ignore-checksums
-choco install 7zip.install                          --force --yes --ignore-checksums
-choco install foxitreader                           --force --yes --ignore-checksums
-choco install flashplayerplugin                     --force --yes --ignore-checksums
-choco install curl                                  --force --yes --ignore-checksums
-choco install intellijidea-community                --force --yes --ignore-checksums
-choco install pycharm-community                     --force --yes --ignore-checksums
-choco install vscode                                --force --yes --ignore-checksums --no-progress
-choco install vscode-python                         --force --yes --ignore-checksums
-choco install googlechrome                          --force --yes --ignore-checksums --no-progress
-choco install chocolatey-windowsupdate.extension    --force --yes --ignore-checksums
-choco install wsl-ubuntu-1804                       --force --yes --ignore-checksums
-choco install git.install                           --force --yes --ignore-checksums
-choco install git-lfs                               --force --yes --ignore-checksums
-choco install vlc                                   --force --yes --ignore-checksums
-choco install dotnetfx                              --force --yes --ignore-checksums
-choco install ccleaner                              --force --yes --ignore-checksums
-choco install microsoft-teams.install               --force --yes --ignore-checksums
-choco install spotify                               --force --yes --ignore-checksums
-choco install microsoft-windows-terminal            --force --yes --ignore-checksums
-choco install jq                                    --force --yes --ignore-checksums
-ori
+# Set policy for current process
+Set-ExecutionPolicy Bypass -Scope Process -Force
+
+# Enable TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 3072
+
+# Install Chocolatey if not installed
+if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing Chocolatey..."
+    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}
+
+# Optional: Refresh environment
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+
+# Set log file
+$log = "$env:USERPROFILE\choco_install_log.txt"
+Start-Transcript -Path $log -Force
+
+# Install packages
+$packages = @(
+    "python",
+    "ojdkbuild8",
+    "jre8",
+    "jdk8",
+    "maven",
+    "7zip.install",
+    "foxitreader",
+    "flashplayerplugin",
+    "curl",
+    "intellijidea-community",
+    "pycharm-community",
+    "vscode",
+    "vscode-python",
+    "googlechrome",
+    "chocolatey-windowsupdate.extension",
+    "wsl-ubuntu-1804",
+    "git.install",
+    "git-lfs",
+    "vlc",
+    "dotnetfx",
+    "ccleaner",
+    "microsoft-teams.install",
+    "spotify",
+    "microsoft-windows-terminal",
+    "jq"
+)
+
+foreach ($pkg in $packages) {
+    Write-Host "Installing $pkg..."
+    choco install $pkg --force --yes --ignore-checksums --no-progress
+}
+
+Stop-Transcript
+
+Write-Host "All packages installed. Log saved at $log"
+

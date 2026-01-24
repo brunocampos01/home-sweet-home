@@ -28,6 +28,10 @@ cd home-sweet-home-master
 sudo chmod +x initial_install.sh
 ./initial_install.sh
 ```
+```bash
+powershell -ExecutionPolicy Bypass -File .\windows_install.ps1
+```
+
 
 ### Post Installation
 ```

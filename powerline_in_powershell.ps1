@@ -60,7 +60,7 @@ style = "bold blue"
 
 [git_branch]
 symbol = ""
-format = " $branch"
+format = "$branch"
 style = "bold purple"
 
 [python] 

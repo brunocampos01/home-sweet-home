@@ -58,5 +58,7 @@ foreach ($pkg in $packages) {
 
 Stop-Transcript
 
+winget install Anthropic.ClaudeCode
+
 Write-Host "All packages installed. Log saved at $log"
 

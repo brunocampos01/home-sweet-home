@@ -27,6 +27,7 @@ $packages = @(
     "ojdkbuild8",
     "jre8",
     "jdk8",
+    "flameshot",
     "maven",
     "7zip.install",
     "foxitreader",

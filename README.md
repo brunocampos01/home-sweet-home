@@ -28,6 +28,7 @@ cd home-sweet-home-master
 sudo chmod +x initial_install.sh
 ./initial_install.sh
 ```
+Windows
 ```bash
 powershell -ExecutionPolicy Bypass -File .\windows_install.ps1
 ```
@@ -38,6 +39,10 @@ powershell -ExecutionPolicy Bypass -File .\windows_install.ps1
 hostnamectl set-hostname <computer_name>
 sudo chmod +x projects/home-sweet-home-master/clone_all_repos_github.sh
 projects/home-sweet-home-master/clone_all_repos_github.sh
+```
+Windows
+```bash
+powershell -ExecutionPolicy Bypass -File .\powerline_in_powershell.ps1
 ```
 
 ### Benckmark

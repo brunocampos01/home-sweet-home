@@ -2,7 +2,7 @@
 # Configuration
 # ==========================
 $USERNAME = "brunocampos01"
-$TOKEN = ""
+$TOKEN = $env:GITHUB_TOKEN
 $DEST_DIR = "C:\Users\$env:USERNAME\projects"
 
 # ==========================

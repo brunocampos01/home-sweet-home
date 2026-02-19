@@ -82,9 +82,14 @@ success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 '@
 
-Set-Content -Path $configFile -Value $starshipConfig
+if (!(Test-Path $configFile)) {
+    Set-Content -Path $configFile -Value $starshipConfig
+    Write-Host "Starship configuration created at $configFile" -ForegroundColor Green
+}
+else {
+    Write-Host "Starship config already exists at $configFile — skipping overwrite." -ForegroundColor Yellow
+}
 
-Write-Host "Starship configuration created at $configFile" -ForegroundColor Green
 Write-Host ""
 Write-Host "✅ Installation complete!"
 Write-Host "👉 Restart your terminal to see the new prompt."

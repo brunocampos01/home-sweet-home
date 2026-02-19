@@ -94,7 +94,7 @@ mkdir $HOME/.jupyter/
 cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
 cp config/.vimrc                        $HOME/ # yes
 cp config/.gitconfig                    $HOME/ # yes
-cp .config/                             $HOME/ # yes
+cp -r .config/                          $HOME/ # yes
 
 sleep 2
 echo
@@ -129,11 +129,11 @@ zsh -c "echo $PATH"
 
 ## SSH keys
 ```
-mkdir -p $HOME/.local/bin
-set -Ua fish_user_paths $HOME/.local/bin
+mkdir -p ~/.ssh
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 
-# test
-zsh -c "echo $PATH"
+# Add to GitHub: https://github.com/settings/ssh/new
 ```
 
 

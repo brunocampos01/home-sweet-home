@@ -1,5 +1,8 @@
 #!/bin/bash
 set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # ----------------------------------- #
 # My Apps
 # ----------------------------------- #
@@ -48,6 +51,7 @@ deb_app=(
     curl
     nmap
     qalculate-gtk
+    bat
 )
 
 python_dep=(
@@ -73,7 +77,6 @@ sdk_apps=(
     sbt
     scala
     spark
-    java 8.0.282-open
 )
 
 to_remove=(
@@ -100,7 +103,7 @@ to_remove=(
     gnome-screenshot
 )
 
-mkdir tmp/
+mkdir -p tmp/
 cd tmp/
 
 echo -e "======================================== \n"
@@ -134,31 +137,11 @@ python3 -m pip install -U setuptools\
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Installing Vim Extensions"
-echo -e "======================================== \n"
-
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-touch ~/.vimrc
-ln ~/.vimrc ~/.vim/vimrc
-vim +PluginInstall +qall
-
-sleep 2
-echo
-echo -e "======================================== \n"
 echo -e "Installing Ctop"
 echo -e "======================================== \n"
-sudo wget https://github.com/bcicen/ctop/releases/download/0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop
+CTOP_VERSION=$(curl -s https://api.github.com/repos/bcicen/ctop/releases/latest | grep -oP '"tag_name": "\K[^"]+' | sed 's/^v//')
+sudo wget "https://github.com/bcicen/ctop/releases/download/v${CTOP_VERSION}/ctop-${CTOP_VERSION}-linux-amd64" -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
-
-sleep 2
-echo
-echo -e "======================================== \n"
-echo -e "Installing Ccat (collored cat)"
-echo -e "======================================== \n"
-wget https://github.com/jingweno/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
-tar xfz linux-amd64-1.1.0.tar.gz
-sudo cp linux-amd64-1.1.0/ccat /usr/local/bin/
-sudo chmod +x /usr/local/bin/ccat
 
 sleep 2
 echo
@@ -285,7 +268,7 @@ echo
 echo -e "======================================== \n"
 echo -e "Installing VSCode"
 echo -e "======================================== \n"
-cd /tmp && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg && cd $HOME
+(cd /tmp && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg)
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 sudo apt update
 sudo apt install code
@@ -326,42 +309,38 @@ for app in ${sdk_apps[@]}; do
     sdk install "$app"
 done
 
+# Install Java separately (requires version identifier)
+sdk install java 8.0.282-open
+
 # tests
 java -version
 javac -version
 mvn -version
 
- echo
- sleep 2
- echo -e "======================================== \n"
- echo -e "Installing Docker"
- echo -e "======================================== \n"
- curl -fsSL https://get.docker.com -o get-docker.sh
- sh get-docker.sh
- curl -fsSL https://test.docker.com -o test-docker.sh
- sh test-docker.sh
- sh install.sh
- make check
+echo
+sleep 2
+echo -e "======================================== \n"
+echo -e "Installing Docker"
+echo -e "======================================== \n"
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 
 sleep 2
 echo
 echo -e "======================================== \n"
-echo -e "Installing Docker Compose"
+echo -e "Installing Docker Compose (plugin)"
 echo -e "======================================== \n"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-docker-compose --version
+sudo apt install -y docker-compose-plugin
+docker compose version
 
 sleep 2
 echo
 echo -e "======================================== \n"
 echo -e "Generate ssh keys"
 echo -e "======================================== \n"
-mkdir ~/.ssh
-cd ~/.ssh
-ssh-keygen -t rsa -N "" -f id_rsa
-cat id_rsa.pub
+mkdir -p ~/.ssh
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 
 sleep 2
 echo
@@ -378,21 +357,21 @@ echo -e "Set Docker"
 echo -e "======================================== \n"
 echo -e "Open New Terminal and execute Docker postinstallation: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user "
 
-sleep 60
+read -p "Press Enter to continue after Docker post-install..."
 echo
 echo -e "======================================== \n"
 echo -e "Set screenshot"
 echo -e "======================================== \n"
-echo -e "flameshot as default (Prt Sc): hhttps://flameshot.org/docs/guide/key-bindings/"
+echo -e "flameshot as default (Prt Sc): https://flameshot.org/docs/guide/key-bindings/"
 
-sleep 60
+read -p "Press Enter to continue after setting screenshot..."
 echo
 echo -e "======================================== \n"
 echo -e "Set SSH Github"
 echo -e "======================================== \n"
 echo -e "Open this link: https://github.com/settings/ssh/new"
 echo -e "Title: $(hostname)"
-echo -e "Key:\n$(cat ~/.ssh/id_rsa.pub)"
+echo -e "Key:\n$(cat ~/.ssh/id_ed25519.pub)"
 
 sleep 2
 echo
@@ -428,7 +407,7 @@ echo
 echo -e "======================================== \n"
 echo -e "Installing Oh My BASH! "
 echo -e "======================================== \n"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --unattended
 
 sleep 2
 echo
@@ -443,15 +422,30 @@ echo
 echo -e "======================================== \n"
 echo -e "Downloading predefined configurations"
 echo -e "======================================== \n"
-mkdir $HOME/.config/terminator/
-cp --force --verbose config/terminal/terminator/config    $HOME/.config/terminator/ # yes
-cp --force --verbose config/terminal/zork/zork.theme.sh   $HOME/.oh-my-bash/themes/zork/ # yes
-mkdir $HOME/.jupyter/
-cp config/jupyter_notebook_config.py    $HOME/.jupyter/ # yes
-cp config/.bashrc                       $HOME/ # yes
-cp config/.bash_eternal_history         $HOME/ # yes
-cp config/.vimrc                        $HOME/ # yes
-cp config/.gitconfig                    $HOME/ # yes
+mkdir -p "$HOME/.config/terminator/"
+cp --force --verbose "$SCRIPT_DIR/config/terminal/terminator/config"    "$HOME/.config/terminator/" # yes
+mkdir -p "$HOME/.oh-my-bash/themes/zork/"
+cp --force --verbose "$SCRIPT_DIR/config/terminal/zork/zork.theme.sh"   "$HOME/.oh-my-bash/themes/zork/" # yes
+mkdir -p "$HOME/.jupyter/"
+cp "$SCRIPT_DIR/config/jupyter_notebook_config.py"    "$HOME/.jupyter/" # yes
+cp "$SCRIPT_DIR/config/.bashrc"                       "$HOME/" # yes
+cp "$SCRIPT_DIR/config/.bash_eternal_history"         "$HOME/" # yes
+cp "$SCRIPT_DIR/config/.vimrc"                        "$HOME/" # yes
+cp "$SCRIPT_DIR/config/.gitconfig"                    "$HOME/" # yes
+cp "$SCRIPT_DIR/config/.gitignore_global"             "$HOME/" # yes
+cp "$SCRIPT_DIR/config/.databrickscfg.example"        "$HOME/.databrickscfg" # yes
+
+sleep 2
+echo
+echo -e "======================================== \n"
+echo -e "Installing Vim Extensions"
+echo -e "======================================== \n"
+
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+fi
+ln -sf "$HOME/.vimrc" "$HOME/.vim/vimrc"
+vim +PluginInstall +qall
 
 sleep 2
 echo

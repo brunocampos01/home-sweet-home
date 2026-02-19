@@ -1,0 +1,8 @@
+# Credentials
+.databrickscfg
+
+# macOS binary runtime state
+mac/.config/iterm2/AppSupport/
+
+# IDE-generated calibration
+mac/.config/jgit/

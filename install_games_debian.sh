@@ -8,7 +8,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # ---------------------------------------------------------------
 # Please, reboot the system
 # ---------------------------------------------------------------
-sleep 600
+read -p "Reboot your system, then press Enter to continue..."
 # ---------------------------------------------------------------
 # Install Nvidia Drivers
 # ---------------------------------------------------------------

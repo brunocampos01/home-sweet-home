@@ -5,7 +5,7 @@ import stat
 
 c = get_config()
 
-c.NotebookApp.ip = '0.0.0.0'
+c.NotebookApp.ip = '127.0.0.1'
 
 # The port the notebook server will listen on
 c.NotebookApp.port = 8888

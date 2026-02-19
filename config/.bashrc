@@ -8,7 +8,7 @@ export LANG=en_US.UTF-8
 alias ll='ls -lt'
 alias la='ls -A'
 alias l='ls -CF'
-alias cat='/usr/local/bin/ccat'
+command -v bat &>/dev/null && alias cat='bat --plain'
 alias du='ncdu'
 alias file="xdg-open"
 # alias file=nemo
@@ -120,13 +120,13 @@ source $OSH/oh-my-bash.sh
 #---------------------------------------------------------------
 # Colored Terminal
 #---------------------------------------------------------------
-NORMAL=`echo -e '\033[0m'`
-RED=`echo -e '\033[31m'`
-GREEN=`echo -e '\033[0;32m'`
-LGREEN=`echo -e '\033[1;32m'`
-BLUE=`echo -e '\033[0;34m'`
-LBLUE=`echo -e '\033[1;34m'`
-YELLOW=`echo -e '\033[0;33m'`
+NORMAL=$(echo -e '\033[0m')
+RED=$(echo -e '\033[31m')
+GREEN=$(echo -e '\033[0;32m')
+LGREEN=$(echo -e '\033[1;32m')
+BLUE=$(echo -e '\033[0;34m')
+LBLUE=$(echo -e '\033[1;34m')
+YELLOW=$(echo -e '\033[0;33m')
 
 # grep
 GREP_OPTS='--color=auto'      # for aliases since $GREP_OPTIONS is deprecated

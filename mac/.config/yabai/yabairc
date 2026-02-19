@@ -80,9 +80,7 @@ yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Anki$" manage=off
 yabai -m rule --add app="^Flameshot$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^AltTab$" manage=off
 yabai -m rule --add app="^GitX$" manage=off
 yabai -m rule --add app="^OBS$" manage=off
-yabai -m rule --add app="^jumpcloud$" manage=off
 
 echo "yabai configuration loaded.."

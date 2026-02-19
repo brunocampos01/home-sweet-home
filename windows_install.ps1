@@ -24,14 +24,11 @@ Start-Transcript -Path $log -Force
 # Install packages
 $packages = @(
     "python",
-    "ojdkbuild8",
-    "jre8",
-    "jdk8",
+    "temurin17",
     "flameshot",
     "maven",
     "7zip.install",
-    "foxitreader",
-    "flashplayerplugin",
+    "sumatrapdf.install",
     "curl",
     "intellijidea-community",
     "pycharm-community",
@@ -39,12 +36,11 @@ $packages = @(
     "vscode-python",
     "googlechrome",
     "chocolatey-windowsupdate.extension",
-    "wsl-ubuntu-1804",
+    "wsl-ubuntu-2204",
     "git.install",
     "git-lfs",
     "vlc",
     "dotnetfx",
-    "ccleaner",
     "microsoft-teams.install",
     "spotify",
     "microsoft-windows-terminal",
@@ -52,8 +48,13 @@ $packages = @(
 )
 
 foreach ($pkg in $packages) {
-    Write-Host "Installing $pkg..."
-    choco install $pkg --force --yes --ignore-checksums --no-progress
+    try {
+        Write-Host "Installing $pkg..."
+        choco install $pkg --force --yes --no-progress
+    }
+    catch {
+        Write-Warning "Failed to install ${pkg}: $_"
+    }
 }
 
 Stop-Transcript
@@ -62,4 +63,3 @@ winget install Anthropic.ClaudeCode
 winget install SlackTechnologies.Slack
 
 Write-Host "All packages installed. Log saved at $log"
-

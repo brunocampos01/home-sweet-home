@@ -173,7 +173,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -f "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # TODO
 # HOMEBREW_FOLDER="/usr/local/share"
@@ -183,7 +183,6 @@ source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #---------------------------------------------------------------
 # Paths
 #---------------------------------------------------------------
-export PATH=$PATH
 # Java
 # export JAVA_HOME=/usr/lib/jvm/default-java
 

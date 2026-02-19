@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 # ----------------------------------- #
 # My Apps
 # ----------------------------------- #
@@ -105,7 +106,7 @@ cd tmp/
 echo -e "======================================== \n"
 echo -e "Update and upgrade"
 echo -e "======================================== \n"
-sudo apt update && apt upgrade
+sudo apt update && sudo apt upgrade -y
 sleep 2
 echo
 echo -e "======================================== \n"

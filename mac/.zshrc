@@ -178,7 +178,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /Users/bruno.campos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # TODO
 # HOMEBREW_FOLDER="/usr/local/share"
@@ -188,7 +188,6 @@ source /Users/bruno.campos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #---------------------------------------------------------------
 # Paths
 #---------------------------------------------------------------
-export PATH=$PATH
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
 # export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
 export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
@@ -198,6 +197,6 @@ export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
 
 # Python
 # export PYTHONHOME=
-# export PYTHONPATH=export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+# export PYTHONPATH=
 
 fpath+=~/.zfunc

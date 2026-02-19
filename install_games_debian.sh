@@ -1,3 +1,4 @@
+#!/bin/bash
 # https://flatpak.org/setup/Ubuntu
 sudo add-apt-repository ppa:flatpak/stable
 sudo apt update

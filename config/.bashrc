@@ -22,10 +22,8 @@ alias rm=trash
 #---------------------------------------------------------------
 # History
 #---------------------------------------------------------------
-# Don’t save lines which begin with a <space> character
-HISTCONTROL=ignorespace
-# Eliminate duplicates
-HISTCONTROL=erasedups
+# Don't save lines which begin with a <space> character + eliminate duplicates
+HISTCONTROL=ignorespace:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend

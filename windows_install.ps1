@@ -15,7 +15,7 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 # Optional: Refresh environment
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
 
 # Set log file
 $log = "$env:USERPROFILE\choco_install_log.txt"
@@ -59,6 +59,7 @@ foreach ($pkg in $packages) {
 Stop-Transcript
 
 winget install Anthropic.ClaudeCode
+winget install SlackTechnologies.Slack
 
 Write-Host "All packages installed. Log saved at $log"
 

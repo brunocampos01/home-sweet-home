@@ -42,6 +42,7 @@ projects/home-sweet-home-master/clone_all_repos_github.sh
 ```
 Windows
 ```bash
+powershell -ExecutionPolicy Bypass -File .\home-sweet-home\clone_all_repos_github.ps1
 powershell -ExecutionPolicy Bypass -File .\powerline_in_powershell.ps1
 ```
 

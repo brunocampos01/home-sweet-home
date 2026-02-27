@@ -1,0 +1,42 @@
+#---------------------------------------------------------------
+# Shared aliases — sourced by both .bashrc and .zshrc
+#---------------------------------------------------------------
+
+# Safety
+alias rm='trash'
+
+# Navigation
+alias la='ls -A'
+alias l='ls -CF'
+
+# Language shortcuts
+alias python='python3'
+alias pip='pip3'
+
+# Tool replacements (guarded — only alias if tool is installed)
+command -v ccat  &>/dev/null && alias cat='ccat'
+command -v ncdu  &>/dev/null && alias du='ncdu'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+
+# Docker shortcuts (guarded)
+if command -v docker &>/dev/null; then
+    alias d='docker'
+    alias dps='docker ps'
+    alias dlogs='docker logs -f'
+fi
+
+# Python virtual environments
+alias venv='source venv/bin/activate'
+alias mkvenv='python3 -m venv venv'
+
+# System inspection
+alias ports='lsof -i -P -n | grep LISTEN'
+
+# File opener
+alias file='xdg-open'

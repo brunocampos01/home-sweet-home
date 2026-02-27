@@ -1,0 +1,4 @@
+[dev]
+host = https://<workspace-id>.azuredatabricks.net/?o=<org-id>
+token = <your-databricks-token>
+jobs-api-version = 2.0

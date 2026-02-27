@@ -1,0 +1,6 @@
+# Sensitive personal files — use the .example templates instead
+linux/config/.databrickscfg
+linux/config/.bash_eternal_history
+
+# Claude Code session data
+.claude/

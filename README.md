@@ -103,6 +103,28 @@ chmod +x mac/initial_install.sh
 
 ---
 
+## Obsidian (macOS / Windows)
+
+Clones the private vault repo [`brunocampos01/obsidian`](https://github.com/brunocampos01/obsidian), installs Obsidian, installs every community plugin and theme the vault uses, registers the vault and opens it. Plugin settings, theme, CSS snippets and core plugins come from the vault's `.obsidian/` folder, so the new machine looks exactly like the current one.
+
+```bash
+# macOS
+chmod +x mac/setup_obsidian.sh
+./mac/setup_obsidian.sh
+```
+
+```powershell
+# Windows
+powershell -ExecutionPolicy Bypass -File .\windows\setup_obsidian.ps1
+```
+
+- Needs access to the private repo: an authenticated `gh`, an SSH key, or a GitHub sign-in when git asks.
+- Defaults: repo cloned to `~/projects/obsidian`, vault in its `obsidian/` subfolder. Override with `VAULT_REPO`, `CLONE_DIR`, `VAULT_SUBDIR` (macOS env vars) or `-VaultRepo`, `-CloneDir`, `-VaultSubdir` (Windows).
+- Safe to re-run: existing clone is pulled, an installed Obsidian is kept, plugins already in the repo are not re-downloaded, `data.json` settings are never overwritten.
+- On first open Obsidian asks whether you trust the vault author: click **Trust author and enable plugins**.
+
+---
+
 ## Post-Install
 
 ```bash
@@ -123,6 +145,8 @@ sudo chmod +x linux/clone_all_repos_github.sh
 | Linux/Debian | [linux/initial_install.sh](linux/initial_install.sh) | apt, snap, flatpak, Docker, VSCode, data stack |
 | Windows | [windows/initial_install.ps1](windows/initial_install.ps1) | Chocolatey packages + winget (Claude Code, Cursor) |
 | macOS | [mac/initial_install.sh](mac/initial_install.sh) | Homebrew: shell, IDEs, Docker, yabai, skhd, data stack |
+| Obsidian (macOS) | [mac/setup_obsidian.sh](mac/setup_obsidian.sh) | Vault clone, Obsidian, community plugins + theme, vault registration |
+| Obsidian (Windows) | [windows/setup_obsidian.ps1](windows/setup_obsidian.ps1) | Same as macOS, via winget (fallback: official installer) |
 | Gaming (Debian) | [linux/install_games_debian.sh](linux/install_games_debian.sh) | Steam, Lutris, Wine, Bottles |
 
 ---

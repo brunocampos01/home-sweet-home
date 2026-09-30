@@ -48,6 +48,7 @@ sudo chmod +x linux/clone_all_repos_github.sh
 - [mac/initial_install.sh](mac/initial_install.sh) — macOS bootstrap: Homebrew formulae + casks, Oh My Zsh, Powerlevel10k, yabai, skhd, deploys `mac/config/` to `$HOME`.
 - [mac/config/](mac/config/) — macOS dotfiles: `.zshrc`, yabai, skhd, lsd, htop, jgit.
 - [windows/initial_install.ps1](windows/initial_install.ps1) — Windows bootstrap: Chocolatey packages + winget (Claude Code, Cursor).
+- [mac/setup_obsidian.sh](mac/setup_obsidian.sh) / [windows/setup_obsidian.ps1](windows/setup_obsidian.ps1) — Obsidian setup: clones the private vault repo `brunocampos01/obsidian`, installs Obsidian (brew/winget, fallback to the official release), downloads missing community plugins/theme listed in the vault's `.obsidian/` from the official registry, registers the vault in `obsidian.json` and opens it. Keep both scripts in sync.
 - [old_scripts/](old_scripts/) — Deprecated scripts, kept for reference only.
 
 ## Key Technology Installed
